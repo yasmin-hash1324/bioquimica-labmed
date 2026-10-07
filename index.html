@@ -106,6 +106,23 @@
     @media(max-width:900px){.glossary-grid{grid-template-columns:repeat(2,1fr)}.quiz-options.compact{grid-template-columns:1fr 1fr}.urine-media{grid-template-columns:1fr}.quiz-shell{padding:20px}nav{display:none;position:absolute;top:76px;left:4vw;right:4vw;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:10px}nav.open{display:block}nav ul{display:grid}.menu{display:block}.hero-grid,.video-shell,.media-grid,.lab-wrap,.resource-grid,.result-grid,.footer-grid{grid-template-columns:1fr}.identity-card{max-width:520px}.g3,.g2,.flashgrid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.lab-info{position:static}.stat-row{grid-template-columns:1fr 1fr}.foot-right{text-align:left}.subnav{top:76px}.barrow{grid-template-columns:85px 1fr 60px}}
     @media(max-width:560px){.nav{height:68px}.brand img{width:42px;height:42px}.brand small{display:none}.hero{padding-top:54px}.identity-card img{width:150px}.stat-row{grid-template-columns:1fr}.experiment{padding:20px}.practice-card{min-height:240px}.subnav{top:68px}.barrow{grid-template-columns:78px 1fr 54px;font-size:.74rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.flash-inner{transition:none}}
+.video-embed{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  border-radius:22px;
+  background:#0e244f;
+  box-shadow:var(--shadow);
+}
+
+.video-embed iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
   </style>
 </head>
 <body>
@@ -239,14 +256,19 @@
         </div>
 
         <div class="video-shell" style="margin-top:28px">
-          <div class="video-placeholder reveal" id="videoBox" role="region" aria-label="Video resumen de la práctica">
-            <div class="play">▶</div>
-            <p><strong>Práctica en 5 minutos.</strong> Síntesis audiovisual del procedimiento, los hallazgos y los principales aprendizajes de la sesión.</p>
-          </div>
+        <div class="video-embed reveal">
+          <iframe
+            src="https://www.youtube.com/embed/mgKltizydPg"
+            title="Práctica 03 — De la gota al espectro"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
           <article class="card video-note reveal">
-            <div class="kicker">Video resumen</div><h3>Práctica en síntesis</h3>
-            <p>El video resume el desarrollo experimental: preparación de las muestras, mediciones realizadas, observaciones relevantes y resultados principales. El fundamento bioquímico y la discusión se desarrollan en las secciones siguientes.</p>
-            <a class="btn btn-ghost" href="#experimentos">Ver experimentos</a>
+            <div class="kicker">Video resumen</div><h3>Práctica en 4 minutos</h3>
+<p>Resumen audiovisual del desarrollo experimental: preparación de muestras, mediciones realizadas, observaciones relevantes y resultados principales.</p>            <a class="btn btn-ghost" href="#experimentos">Ver experimentos</a>
           </article>
         </div>
       </div>
