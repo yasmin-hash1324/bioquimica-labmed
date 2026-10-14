@@ -126,6 +126,17 @@
   
     .p04-shell{padding:0;background:#F5F8FC}
     .p04-frame{width:100%;height:1400px;min-height:1400px;border:0;display:block;background:#F5F8FC;overflow:hidden}
+
+    /* Accesos a prácticas: una sola familia cromática, de claro a oscuro */
+    .practice-shortcuts{display:flex;gap:14px;flex-wrap:wrap}
+    .practice-shortcuts .practice-btn{color:#fff;border:0;box-shadow:0 10px 24px rgba(17,45,97,.14);transition:.2s ease}
+    .practice-shortcuts .practice-btn:hover{transform:translateY(-2px);filter:brightness(.98)}
+    .practice-btn-03{background:#3978C7}
+    .practice-btn-04{background:#1F559D}
+    .practice-grid .practice-card:nth-child(1){border-top:5px solid #3978C7}
+    .practice-grid .practice-card:nth-child(2){border-top:5px solid #1F559D}
+    .practice-grid .practice-card:nth-child(3){border-top:5px solid #163B8C}
+    .practice-grid .practice-card:nth-child(n+4){border-top:5px solid #0E2A67}
   </style>
 </head>
 <body>
@@ -168,9 +179,9 @@
         <div class="eyebrow"><span class="dot"></span> Portafolio académico progresivo · Grupo A</div>
         <h1>Bioquímica <span>LabMed</span></h1>
         <p class="lead">Portafolio interactivo de prácticas de laboratorio. Integra fundamento bioquímico, evidencia experimental, resultados, discusión, aplicación clínica y repaso activo.</p>
-        <div class="hero-actions">
-          <a href="#p03" class="btn btn-primary">Explorar Práctica 03 →</a>
-          <a href="#p04" class="btn btn-accent">Explorar Práctica 04 →</a>
+        <div class="hero-actions practice-shortcuts">
+          <a href="#p03" class="btn practice-btn practice-btn-03">Explorar Práctica 03 →</a>
+          <a href="#p04" class="btn practice-btn practice-btn-04">Explorar Práctica 04 →</a>
         </div>
       </div>
       <aside class="identity-card reveal">
@@ -240,7 +251,7 @@
   </section>
 
   <section class="practice-shell panel-section p04-shell" id="p04" data-panel-title="Práctica 04">
-    <iframe id="p04Frame" class="p04-frame" src="p04-preview.html?embed=1&v=20261014-3" title="Práctica 04 · Del pulso al equilibrio" loading="eager"></iframe>
+    <iframe id="p04Frame" class="p04-frame" src="p04-preview.html?embed=1&v=20261014-4" title="Práctica 04 · Del pulso al equilibrio" loading="eager"></iframe>
   </section>
 
   <section class="practice-shell panel-section" id="p03" data-panel-title="Práctica 03">
