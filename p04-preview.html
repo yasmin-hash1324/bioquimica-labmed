@@ -595,6 +595,7 @@ cinta:['Cinta adhesiva','Material de fijación utilizado para mantener el algod�
 heparina:['Frasco de heparina','Contiene el anticoagulante utilizado para recubrir las paredes internas de la jeringa. Se empleó una pequeña cantidad y se retiró el exceso para evitar coagulación sin introducir un volumen libre significativo.'],
 papel:['Papel absorbente','Material auxiliar destinado a mantener el área de trabajo limpia y a contener pequeñas salpicaduras o humedad durante la preparación del procedimiento.'],
 meson:['Mesón de trabajo','Superficie de laboratorio destinada a organizar el material antes del procedimiento. Su disposición ordenada facilita la secuencia de preparación y reduce manipulaciones innecesarias.']
+};
 document.querySelectorAll('.pin').forEach(function(p){p.onclick=function(){var d=labData[p.dataset.k];document.getElementById('labInfo').innerHTML='<b>'+d[0]+'</b><br>'+d[1]}});
 
 var modal=document.getElementById('modal'),modalImg=document.getElementById('modalImg');
@@ -752,6 +753,6 @@ out.innerHTML='<h3>Interpretación integrada</h3><div class="rstep"><b>1 · Esta
 };
 document.getElementById('clear').onclick=function(){document.querySelectorAll('.form input').forEach(function(i){i.value=''});document.getElementById('preset').value='';document.getElementById('result').innerHTML='<h3>Esperando datos</h3><p class="subtle">Completa pH, PCO₂ y HCO₃⁻.</p>'};
 </script>
-<!-- BUILD-P04-20261014-FINAL -->
+<!-- BUILD-P04-20261014-FINAL-FIX-JS -->
 </body>
 </html>
