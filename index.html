@@ -142,7 +142,6 @@
       <ul>
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#practicas">Prácticas</a></li>
-        <li><a href="#p04">Práctica 04</a></li>
         <li><a href="#glosario">Glosario</a></li>
         <li><a href="#casos">Casos clínicos</a></li>
         <li><a href="#flashcards">Flashcards</a></li>
@@ -155,7 +154,7 @@
 <div class="panel-rail">
   <div class="container panel-rail-inner">
     <button class="panel-arrow" id="panelPrev" aria-label="Panel anterior">←</button>
-    <div class="panel-status"><div><div class="mini">Navegación lateral</div><strong id="panelTitle">Inicio</strong><small id="panelCounter">1 / 7</small></div></div>
+    <div class="panel-status"><div><div class="mini">Navegación lateral</div><strong id="panelTitle">Inicio</strong><small id="panelCounter">1 / 8</small></div></div>
     <div class="panel-hint">Usa el menú o las flechas para desplazarte a la derecha entre secciones.</div>
     <button class="panel-arrow" id="panelNext" aria-label="Siguiente panel">→</button>
   </div>
@@ -171,8 +170,7 @@
         <p class="lead">Portafolio interactivo de prácticas de laboratorio. Integra fundamento bioquímico, evidencia experimental, resultados, discusión, aplicación clínica y repaso activo.</p>
         <div class="hero-actions">
           <a href="#p03" class="btn btn-primary">Explorar Práctica 03 →</a>
-          <a href="#p04" class="btn btn-accent">Explorar Práctica 04</a>
-          <a href="#laboratorio" class="btn btn-ghost">Laboratorio interactivo P03</a>
+          <a href="#p04" class="btn btn-accent">Explorar Práctica 04 →</a>
         </div>
       </div>
       <aside class="identity-card reveal">
@@ -242,7 +240,7 @@
   </section>
 
   <section class="practice-shell panel-section p04-shell" id="p04" data-panel-title="Práctica 04">
-    <iframe id="p04Frame" class="p04-frame" src="p04-preview.html?embed=1&v=20261014-2" title="Práctica 04 · Del pulso al equilibrio" loading="eager"></iframe>
+    <iframe id="p04Frame" class="p04-frame" src="p04-preview.html?embed=1&v=20261014-3" title="Práctica 04 · Del pulso al equilibrio" loading="eager"></iframe>
   </section>
 
   <section class="practice-shell panel-section" id="p03" data-panel-title="Práctica 03">
@@ -608,7 +606,6 @@ function updatePanelUI(id){
 function activatePanel(id,subId){
   panelSections.forEach(sec=>sec.classList.toggle('active',sec.id===id));
   updatePanelUI(id);
-  if(id==='p04'){setTimeout(()=>{if(typeof resizeP04Frame==='function')resizeP04Frame()},120);setTimeout(()=>{if(typeof resizeP04Frame==='function')resizeP04Frame()},700);}
   window.scrollTo({top:0,behavior:'smooth'});
   setTimeout(()=>{
     if(subId){
