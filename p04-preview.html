@@ -561,6 +561,31 @@ body.embedded .p04-subnav{top:0}
 <script>
 if(window.self!==window.top){document.body.classList.add("embedded");}
 
+function notifyP04Height(){
+  if(window.parent===window) return;
+  var h=Math.max(
+    document.documentElement.scrollHeight,
+    document.body ? document.body.scrollHeight : 0,
+    document.documentElement.offsetHeight,
+    document.body ? document.body.offsetHeight : 0
+  );
+  window.parent.postMessage({type:"p04-height",height:h},"*");
+}
+window.addEventListener("load",function(){
+  notifyP04Height();
+  setTimeout(notifyP04Height,250);
+  setTimeout(notifyP04Height,900);
+  document.querySelectorAll("img").forEach(function(img){
+    if(!img.complete) img.addEventListener("load",notifyP04Height,{once:true});
+  });
+});
+if(window.ResizeObserver){
+  var p04ResizeObserver=new ResizeObserver(function(){notifyP04Height();});
+  p04ResizeObserver.observe(document.documentElement);
+  if(document.body)p04ResizeObserver.observe(document.body);
+}
+document.addEventListener("click",function(){setTimeout(notifyP04Height,80);setTimeout(notifyP04Height,350);});
+
 var labData={
 algodon:['Algodón','Material absorbente utilizado para la antisepsia local y, principalmente, para ejercer compresión directa sobre el sitio de punción después de retirar la aguja.'],
 guantes:['Guantes de procedimiento','Barrera de protección personal que reduce el contacto directo con sangre y disminuye el riesgo de contaminación cruzada durante la preparación y obtención de la muestra.'],
