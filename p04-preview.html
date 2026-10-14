@@ -585,6 +585,26 @@ if(window.ResizeObserver){
   if(document.body)p04ResizeObserver.observe(document.body);
 }
 document.addEventListener("click",function(){setTimeout(notifyP04Height,80);setTimeout(notifyP04Height,350);});
+window.addEventListener("message",function(e){
+  if(!e.data || e.data.type!=="p04-scroll") return;
+  var map={
+    "p04-resumen":"resumen",
+    "p04-glosario":"glosario",
+    "p04-fundamento":"fundamento",
+    "p04-extraccion":"extraccion",
+    "p04-evidencia":"evidencia",
+    "p04-guiados":"casos",
+    "p04-casos":"aplicacion-clinica",
+    "p04-electrolitos":"electrolitos",
+    "p04-discusion":"discusion",
+    "p04-flashcards":"flashcards",
+    "p04-interpretador":"interpretador",
+    "p04-bibliografia":"bibliografia"
+  };
+  var id=map[e.data.target]||e.data.target;
+  var target=document.getElementById(id);
+  if(target) setTimeout(function(){target.scrollIntoView({behavior:"smooth",block:"start"});},80);
+});
 
 var labData={
 algodon:['Algodón','Material absorbente utilizado para la antisepsia local y, principalmente, para ejercer compresión directa sobre el sitio de punción después de retirar la aguja.'],
