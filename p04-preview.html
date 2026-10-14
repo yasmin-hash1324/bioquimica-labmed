@@ -67,6 +67,35 @@ body.embedded .hero{padding-top:38px}
 .p04-subnav a{padding:13px 11px;font-size:.78rem;font-weight:850;color:#65738a;text-decoration:none;border-bottom:3px solid transparent}
 .p04-subnav a:hover{color:var(--navy);border-color:var(--yellow)}
 body.embedded .p04-subnav{top:0}
+
+.clinical-quiz-shell{background:#fff;border:1px solid var(--line);border-radius:26px;padding:26px;box-shadow:0 10px 34px rgba(15,47,101,.07)}
+.clinical-progress{display:flex;align-items:center;gap:16px;margin-bottom:22px;color:#52617a;font-size:.82rem;font-weight:850}
+.clinical-track{height:8px;background:#e7edf4;border-radius:99px;overflow:hidden;flex:1}
+.clinical-track i{display:block;height:100%;background:linear-gradient(90deg,var(--teal2),var(--teal));border-radius:99px;transition:width .25s ease}
+.p04-clinical-case{display:none}
+.p04-clinical-case.active{display:block;animation:clinicalIn .28s ease}
+@keyframes clinicalIn{from{opacity:.35;transform:translateY(8px)}to{opacity:1;transform:none}}
+.clinical-label{display:inline-flex;padding:6px 10px;border-radius:999px;background:#eef6ff;color:var(--navy);border:1px solid #d9e8fb;font-size:.74rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
+.clinical-vignette{font-size:1.03rem;color:#42546c;margin:17px 0}
+.clinical-data{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0 22px}
+.clinical-data span{background:#f5f9fc;border:1px solid var(--line);border-radius:13px;padding:9px 12px;color:#41516a;font-size:.88rem}
+.clinical-data b{color:var(--navy);margin-right:5px}
+.clinical-formula{background:#0e244f;color:#fff;border-radius:14px;padding:13px 16px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:800;margin:12px 0 18px;display:inline-block}
+.clinical-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0 18px}
+.clinical-options label{display:block;cursor:pointer}
+.clinical-options input{position:absolute;opacity:0;pointer-events:none}
+.clinical-options span{display:flex;gap:10px;align-items:flex-start;height:100%;border:1px solid var(--line);background:#fff;border-radius:15px;padding:13px 14px;color:#41516a;transition:.18s ease}
+.clinical-options span b{display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;border-radius:50%;background:#eef6ff;color:var(--navy)}
+.clinical-options label:hover span{border-color:#b8d9da;box-shadow:0 7px 18px rgba(15,47,101,.05)}
+.clinical-options input:checked+span{border-color:var(--teal2);background:#f1fbfb;box-shadow:0 0 0 2px rgba(76,199,193,.13)}
+.clinical-feedback{display:none;margin-top:17px;border-radius:17px;padding:17px 19px;background:#eaf7f0;color:#234f3b;border:1px solid #c9ead8}
+.clinical-feedback.show{display:block}
+.clinical-feedback p{margin:7px 0 10px}
+.clinical-connection{background:#fff;border-left:4px solid var(--yellow);border-radius:0 12px 12px 0;padding:11px 13px;color:#4f5261}
+.clinical-error{display:none;margin-top:13px;color:#8a3434;background:#fff1f1;border-radius:12px;padding:10px 12px}
+.clinical-error.show{display:block}
+.clinical-nav{display:flex;justify-content:space-between;gap:12px;margin-top:23px;border-top:1px solid var(--line);padding-top:19px}
+@media(max-width:700px){.clinical-options{grid-template-columns:1fr}.clinical-quiz-shell{padding:18px}.clinical-progress{align-items:flex-start;flex-direction:column}.clinical-track{width:100%}}
 </style>
 </head>
 <body>
@@ -85,7 +114,7 @@ body.embedded .p04-subnav{top:0}
 </section>
 
 <div class="p04-subnav"><div class="wrap">
-<a href="#resumen">Resumen</a><a href="#glosario">Glosario</a><a href="#fundamento">Fundamento</a><a href="#extraccion">Extracción arterial</a><a href="#evidencia">Evidencia</a><a href="#casos">Casos guiados</a><a href="#electrolitos">Electrolitos</a><a href="#discusion">Discusión</a><a href="#flashcards">Flashcards</a><a href="#interpretador">Interpretador</a><a href="#bibliografia">Bibliografía</a>
+<a href="#resumen">Resumen</a><a href="#glosario">Glosario</a><a href="#fundamento">Fundamento</a><a href="#extraccion">Extracción arterial</a><a href="#evidencia">Evidencia</a><a href="#casos">Casos guiados</a><a href="#aplicacion-clinica">Aplicación clínica</a><a href="#electrolitos">Electrolitos</a><a href="#discusion">Discusión</a><a href="#flashcards">Flashcards</a><a href="#interpretador">Interpretador</a><a href="#bibliografia">Bibliografía</a>
 </div></div>
 
 <main>
@@ -198,9 +227,182 @@ body.embedded .p04-subnav{top:0}
 </div>
 </section>
 
-<section id="electrolitos" class="section">
+
+<section id="aplicacion-clinica" class="section">
 <div class="wrap">
-<div class="head"><div><div class="kicker">07 · Electrolitos</div><h2>Lectura complementaria del medio interno</h2></div><p>Los electrolitos no sustituyen el análisis del pH, pero aportan información sobre osmolaridad, excitabilidad, electroneutralidad y equilibrio ácido-base.</p></div>
+  <div class="head">
+    <div>
+      <div class="kicker">07 · Aplicación clínica</div>
+      <h2>Casos clínicos de razonamiento ácido-base</h2>
+    </div>
+    <p>Aplica el método de interpretación a escenarios clínicos. Selecciona una alternativa y comprueba tu respuesta antes de avanzar.</p>
+  </div>
+
+  <div class="clinical-quiz-shell">
+    <div class="clinical-progress">
+      <span id="p04ClinicalCounter">Caso 1 de 7</span>
+      <div class="clinical-track"><i id="p04ClinicalProgress" style="width:14.285%"></i></div>
+    </div>
+
+    <article class="p04-clinical-case active" data-correct="C">
+      <div class="clinical-label">Caso clínico 01 · Hipoventilación por opioides</div>
+      <p class="clinical-vignette">Un varón de 34 años es encontrado somnoliento, con respiración lenta y pupilas mióticas. La gasometría arterial muestra:</p>
+      <div class="clinical-data">
+        <span><b>pH</b> 7,22</span><span><b>PCO₂</b> 62 mmHg</span><span><b>HCO₃⁻</b> 25 mmol/L</span><span><b>PaO₂</b> 68 mmHg</span>
+      </div>
+      <h3>¿Cuál es el trastorno ácido-base primario?</h3>
+      <div class="clinical-options">
+        <label><input type="radio" name="p04cq1" value="A"><span><b>A</b> Acidosis metabólica</span></label>
+        <label><input type="radio" name="p04cq1" value="B"><span><b>B</b> Alcalosis respiratoria</span></label>
+        <label><input type="radio" name="p04cq1" value="C"><span><b>C</b> Acidosis respiratoria aguda</span></label>
+        <label><input type="radio" name="p04cq1" value="D"><span><b>D</b> Alcalosis metabólica</span></label>
+      </div>
+      <button class="btn btn-primary p04-check-clinical">Comprobar respuesta</button>
+      <div class="clinical-feedback">
+        <strong>Respuesta correcta: C · Acidosis respiratoria aguda.</strong>
+        <p>Existe acidemia y la PCO₂ está marcadamente elevada. El HCO₃⁻ permanece próximo al intervalo de referencia, patrón compatible con un trastorno respiratorio de instalación aguda.</p>
+        <div class="clinical-connection"><strong>Conexión con P04:</strong> en presencia de acidemia, una PCO₂ elevada orienta a un componente respiratorio primario; después debe comprobarse la compensación.</div>
+      </div>
+    </article>
+
+    <article class="p04-clinical-case" data-correct="D">
+      <div class="clinical-label">Caso clínico 02 · Crisis de ansiedad</div>
+      <p class="clinical-vignette">Una mujer de 23 años presenta parestesias peribucales, palpitaciones y respiración rápida después de una situación de estrés. La gasometría arterial muestra:</p>
+      <div class="clinical-data">
+        <span><b>pH</b> 7,53</span><span><b>PCO₂</b> 25 mmHg</span><span><b>HCO₃⁻</b> 21 mmol/L</span>
+      </div>
+      <h3>¿Qué trastorno ácido-base presenta?</h3>
+      <div class="clinical-options">
+        <label><input type="radio" name="p04cq2" value="A"><span><b>A</b> Acidosis respiratoria</span></label>
+        <label><input type="radio" name="p04cq2" value="B"><span><b>B</b> Alcalosis metabólica</span></label>
+        <label><input type="radio" name="p04cq2" value="C"><span><b>C</b> Acidosis metabólica</span></label>
+        <label><input type="radio" name="p04cq2" value="D"><span><b>D</b> Alcalosis respiratoria aguda</span></label>
+      </div>
+      <button class="btn btn-primary p04-check-clinical">Comprobar respuesta</button>
+      <div class="clinical-feedback">
+        <strong>Respuesta correcta: D · Alcalosis respiratoria aguda.</strong>
+        <p>El pH indica alcalemia y la PCO₂ está disminuida. La hiperventilación aumenta la eliminación de CO₂, reduce la concentración de H⁺ y eleva el pH.</p>
+        <div class="clinical-connection"><strong>Conexión con P04:</strong> permite relacionar ventilación alveolar, PCO₂ y dirección del cambio del pH.</div>
+      </div>
+    </article>
+
+    <article class="p04-clinical-case" data-correct="B">
+      <div class="clinical-label">Caso clínico 03 · Vómitos persistentes</div>
+      <p class="clinical-vignette">Una paciente de 42 años presenta vómitos frecuentes durante tres días y refiere debilidad muscular. Los resultados muestran:</p>
+      <div class="clinical-data">
+        <span><b>pH</b> 7,52</span><span><b>PCO₂</b> 47 mmHg</span><span><b>HCO₃⁻</b> 36 mmol/L</span><span><b>K⁺</b> 2,8 mmol/L</span><span><b>Cl⁻</b> 88 mmol/L</span>
+      </div>
+      <h3>¿Cuál es la interpretación más probable?</h3>
+      <div class="clinical-options">
+        <label><input type="radio" name="p04cq3" value="A"><span><b>A</b> Alcalosis respiratoria</span></label>
+        <label><input type="radio" name="p04cq3" value="B"><span><b>B</b> Alcalosis metabólica con compensación respiratoria</span></label>
+        <label><input type="radio" name="p04cq3" value="C"><span><b>C</b> Acidosis metabólica</span></label>
+        <label><input type="radio" name="p04cq3" value="D"><span><b>D</b> Acidosis respiratoria</span></label>
+      </div>
+      <button class="btn btn-primary p04-check-clinical">Comprobar respuesta</button>
+      <div class="clinical-feedback">
+        <strong>Respuesta correcta: B · Alcalosis metabólica con compensación respiratoria.</strong>
+        <p>Existe alcalemia junto con HCO₃⁻ elevado, por lo que el proceso primario es metabólico. El aumento de PCO₂ corresponde a una respuesta respiratoria compensadora.</p>
+        <div class="clinical-connection"><strong>Conexión con P04:</strong> integra la gasometría con la hipocloremia e hipopotasemia asociadas a pérdidas gastrointestinales.</div>
+      </div>
+    </article>
+
+    <article class="p04-clinical-case" data-correct="C">
+      <div class="clinical-label">Caso clínico 04 · Cetoacidosis diabética</div>
+      <p class="clinical-vignette">Una mujer de 20 años con diabetes mellitus tipo 1 presenta poliuria, vómitos, dolor abdominal y respiración profunda. Los resultados muestran:</p>
+      <div class="clinical-data">
+        <span><b>pH</b> 7,18</span><span><b>PCO₂</b> 24 mmHg</span><span><b>HCO₃⁻</b> 10 mmol/L</span><span><b>Na⁺</b> 138 mmol/L</span><span><b>Cl⁻</b> 102 mmol/L</span>
+      </div>
+      <h3>¿Cuál es el anión gap?</h3>
+      <div class="clinical-formula">AG = Na⁺ − (Cl⁻ + HCO₃⁻)</div>
+      <div class="clinical-options">
+        <label><input type="radio" name="p04cq4" value="A"><span><b>A</b> 12 mEq/L</span></label>
+        <label><input type="radio" name="p04cq4" value="B"><span><b>B</b> 18 mEq/L</span></label>
+        <label><input type="radio" name="p04cq4" value="C"><span><b>C</b> 26 mEq/L</span></label>
+        <label><input type="radio" name="p04cq4" value="D"><span><b>D</b> 36 mEq/L</span></label>
+      </div>
+      <button class="btn btn-primary p04-check-clinical">Comprobar respuesta</button>
+      <div class="clinical-feedback">
+        <strong>Respuesta correcta: C · 26 mEq/L.</strong>
+        <p><b>Anión gap:</b> 138 − (102 + 10) = 26 mEq/L, por lo que está elevado. Con la fórmula de Winter, la PCO₂ esperada es 1,5 × 10 + 8 ± 2 = 21–25 mmHg. La PCO₂ observada es 24 mmHg, compatible con compensación respiratoria apropiada.</p>
+        <div class="clinical-connection"><strong>Conexión con P04:</strong> reúne pH, HCO₃⁻, anión gap y fórmula de Winter en una sola interpretación.</div>
+      </div>
+    </article>
+
+    <article class="p04-clinical-case" data-correct="C">
+      <div class="clinical-label">Caso clínico 05 · Diarrea intensa</div>
+      <p class="clinical-vignette">Un paciente de 51 años presenta diarrea acuosa abundante durante cuatro días. Los resultados muestran:</p>
+      <div class="clinical-data">
+        <span><b>pH</b> 7,27</span><span><b>PCO₂</b> 33 mmHg</span><span><b>HCO₃⁻</b> 16 mmol/L</span><span><b>Na⁺</b> 140 mmol/L</span><span><b>Cl⁻</b> 113 mmol/L</span>
+      </div>
+      <h3>¿Cuál es el patrón ácido-base más probable?</h3>
+      <div class="clinical-options">
+        <label><input type="radio" name="p04cq5" value="A"><span><b>A</b> Acidosis respiratoria</span></label>
+        <label><input type="radio" name="p04cq5" value="B"><span><b>B</b> Alcalosis metabólica</span></label>
+        <label><input type="radio" name="p04cq5" value="C"><span><b>C</b> Acidosis metabólica con anión gap normal</span></label>
+        <label><input type="radio" name="p04cq5" value="D"><span><b>D</b> Alcalosis respiratoria</span></label>
+      </div>
+      <button class="btn btn-primary p04-check-clinical">Comprobar respuesta</button>
+      <div class="clinical-feedback">
+        <strong>Respuesta correcta: C · Acidosis metabólica con anión gap normal.</strong>
+        <p>Existe acidemia con HCO₃⁻ disminuido. El anión gap es 140 − (113 + 16) = 11 mEq/L, dentro del intervalo esperado. La pérdida gastrointestinal de bicarbonato produce típicamente este patrón.</p>
+        <div class="clinical-connection"><strong>Conexión con P04:</strong> permite diferenciar acidosis metabólicas con anión gap elevado de aquellas con anión gap conservado.</div>
+      </div>
+    </article>
+
+    <article class="p04-clinical-case" data-correct="D">
+      <div class="clinical-label">Caso clínico 06 · Sepsis y trastorno mixto</div>
+      <p class="clinical-vignette">Una paciente de 67 años ingresa con fiebre, hipotensión, taquipnea y sospecha de infección grave. La gasometría muestra:</p>
+      <div class="clinical-data">
+        <span><b>pH</b> 7,40</span><span><b>PCO₂</b> 24 mmHg</span><span><b>HCO₃⁻</b> 14 mmol/L</span><span><b>Lactato</b> 6,1 mmol/L</span>
+      </div>
+      <h3>¿Cuál es la interpretación más adecuada?</h3>
+      <div class="clinical-options">
+        <label><input type="radio" name="p04cq6" value="A"><span><b>A</b> Gasometría normal porque el pH es 7,40</span></label>
+        <label><input type="radio" name="p04cq6" value="B"><span><b>B</b> Acidosis metabólica adecuadamente compensada</span></label>
+        <label><input type="radio" name="p04cq6" value="C"><span><b>C</b> Alcalosis respiratoria aislada</span></label>
+        <label><input type="radio" name="p04cq6" value="D"><span><b>D</b> Acidosis metabólica y alcalosis respiratoria simultáneas</span></label>
+      </div>
+      <button class="btn btn-primary p04-check-clinical">Comprobar respuesta</button>
+      <div class="clinical-feedback">
+        <strong>Respuesta correcta: D · Trastorno mixto.</strong>
+        <p>Un pH dentro del intervalo de referencia no excluye alteraciones importantes. Para HCO₃⁻ de 14 mmol/L, Winter predice una PCO₂ aproximada de 27–31 mmHg. La PCO₂ observada es 24 mmHg, menor de lo esperado, indicando un componente adicional de alcalosis respiratoria.</p>
+        <div class="clinical-connection"><strong>Conexión con P04:</strong> demuestra por qué el análisis no debe detenerse al observar un pH aparentemente normal.</div>
+      </div>
+    </article>
+
+    <article class="p04-clinical-case" data-correct="D">
+      <div class="clinical-label">Caso clínico 07 · Enfermedad renal e hiperpotasemia</div>
+      <p class="clinical-vignette">Un hombre de 69 años con enfermedad renal crónica presenta debilidad y náuseas. Los resultados muestran:</p>
+      <div class="clinical-data">
+        <span><b>pH</b> 7,24</span><span><b>PCO₂</b> 29 mmHg</span><span><b>HCO₃⁻</b> 13 mmol/L</span><span><b>Na⁺</b> 138 mmol/L</span><span><b>K⁺</b> 6,6 mmol/L</span><span><b>Cl⁻</b> 110 mmol/L</span>
+      </div>
+      <h3>Además de la acidosis metabólica, ¿qué alteración electrolítica destaca?</h3>
+      <div class="clinical-options">
+        <label><input type="radio" name="p04cq7" value="A"><span><b>A</b> Hiponatremia</span></label>
+        <label><input type="radio" name="p04cq7" value="B"><span><b>B</b> Hipopotasemia</span></label>
+        <label><input type="radio" name="p04cq7" value="C"><span><b>C</b> Hipercloremia grave</span></label>
+        <label><input type="radio" name="p04cq7" value="D"><span><b>D</b> Hiperpotasemia</span></label>
+      </div>
+      <button class="btn btn-primary p04-check-clinical">Comprobar respuesta</button>
+      <div class="clinical-feedback">
+        <strong>Respuesta correcta: D · Hiperpotasemia.</strong>
+        <p>El K⁺ de 6,6 mmol/L está claramente elevado. El caso obliga a integrar la alteración ácido-base con una alteración electrolítica clínicamente relevante.</p>
+        <div class="clinical-connection"><strong>Conexión con P04:</strong> refuerza que la interpretación bioquímica debe integrar gasometría y electrolitos, no analizarlos como compartimentos aislados.</div>
+      </div>
+    </article>
+
+    <div class="clinical-nav">
+      <button class="btn ghost" id="p04PrevClinical" disabled>Anterior</button>
+      <button class="btn btn-primary" id="p04NextClinical">Siguiente</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="electrolitos" class="section alt">
+<div class="wrap">
+<div class="head"><div><div class="kicker">08 · Electrolitos</div><h2>Lectura complementaria del medio interno</h2></div><p>Los electrolitos no sustituyen el análisis del pH, pero aportan información sobre osmolaridad, excitabilidad, electroneutralidad y equilibrio ácido-base.</p></div>
 <div class="electro">
 <div class="ion"><strong>Na⁺</strong><h3>Sodio</h3><p>Principal catión extracelular; participa en volumen y osmolaridad del compartimento extracelular.</p><div class="small subtle">Alarma: &lt;120 o &gt;158 mmol/L.</div></div>
 <div class="ion"><strong>K⁺</strong><h3>Potasio</h3><p>Crítico para el potencial de membrana y la excitabilidad neuromuscular.</p><div class="small subtle">Alarma: &lt;2,5 o &gt;8 mmol/L.</div></div>
@@ -210,9 +412,9 @@ body.embedded .p04-subnav{top:0}
 </div>
 </section>
 
-<section id="discusion" class="section alt">
+<section id="discusion" class="section">
 <div class="wrap">
-<div class="head"><div><div class="kicker">08 · Resultados y discusión</div><h2>Integración procedimental y bioquímica</h2></div><p></p></div>
+<div class="head"><div><div class="kicker">09 · Resultados y discusión</div><h2>Integración procedimental y bioquímica</h2></div><p></p></div>
 <div class="grid3">
 <div class="card"><h3>Fase preanalítica</h3><p>La heparinización adecuada y la correcta técnica de punción son determinantes para conservar la muestra y reducir errores. Un exceso de heparina puede modificar resultados.</p></div>
 <div class="card"><h3>Lectura sistemática</h3><p>El pH establece acidemia o alcalemia. PCO₂ y HCO₃⁻ permiten reconocer el componente primario; las fórmulas de compensación ayudan a detectar trastornos mixtos.</p></div>
@@ -222,17 +424,17 @@ body.embedded .p04-subnav{top:0}
 </div>
 </section>
 
-<section id="flashcards" class="section">
+<section id="flashcards" class="section alt">
 <div class="wrap">
-<div class="head"><div><div class="kicker">09 · Repaso activo</div><h2>Flashcards P04</h2></div><p>Toca una tarjeta para revelar la respuesta. Las cuatro tarjetas de trastornos primarios incluyen explícitamente el pH.</p></div>
+<div class="head"><div><div class="kicker">10 · Repaso activo</div><h2>Flashcards P04</h2></div><p>Toca una tarjeta para revelar la respuesta.</p></div>
 <div class="flashbar" id="flashbar"></div>
 <div class="flashgrid" id="flashgrid"></div>
 </div>
 </section>
 
-<section id="interpretador" class="section alt">
+<section id="interpretador" class="section">
 <div class="wrap">
-<div class="head"><div><div class="kicker">10 · Interpretador</div><h2>Interpretador ácido-base libre</h2></div><p>Herramienta educativa. Introduce los valores y revisa cómo se construye la interpretación paso a paso.</p></div>
+<div class="head"><div><div class="kicker">11 · Interpretador</div><h2>Interpretador ácido-base libre</h2></div><p>Herramienta educativa. Introduce los valores y revisa cómo se construye la interpretación paso a paso.</p></div>
 <div class="calc">
 <div class="form">
 <div style="display:flex;gap:8px;margin-bottom:14px"><button class="btn ghost" id="basicMode">Modo básico</button><button class="btn ghost" id="advMode">Modo avanzado</button></div>
@@ -262,9 +464,9 @@ body.embedded .p04-subnav{top:0}
 </div>
 </section>
 
-<section id="bibliografia" class="section">
+<section id="bibliografia" class="section alt">
 <div class="wrap">
-<div class="head"><div><div class="kicker">11 · Bibliografía</div><h2>Fuentes de consulta</h2></div><p>Textos de bioquímica y referencias clínicas empleadas para sustentar los fundamentos y la interpretación.</p></div>
+<div class="head"><div><div class="kicker">12 · Bibliografía</div><h2>Fuentes de consulta</h2></div><p>Textos de bioquímica y referencias clínicas empleadas para sustentar los fundamentos y la interpretación.</p></div>
 <article class="card"><ol class="refs">
 <li>Nelson DL, Cox MM. <i>Principios de Bioquímica de Lehninger</i>. 7.ª ed.</li>
 <li>Kennelly PJ, Botham KM, et al. <i>Harper's Illustrated Biochemistry</i>. 32nd ed. 2023.</li>
@@ -345,6 +547,51 @@ document.querySelectorAll('.answer').forEach(function(b){b.onclick=function(){va
 document.getElementById('caseNext').onclick=function(){if(activeStep<c.steps.length-1){activeStep++;renderCase()}else{activeStep=0;renderCase()}};
 }
 renderCaseList();renderCase();
+
+
+var p04ClinicalCases=[...document.querySelectorAll('.p04-clinical-case')];
+var p04ClinicalIndex=0;
+var p04ClinicalCounter=document.getElementById('p04ClinicalCounter');
+var p04ClinicalProgress=document.getElementById('p04ClinicalProgress');
+var p04PrevClinical=document.getElementById('p04PrevClinical');
+var p04NextClinical=document.getElementById('p04NextClinical');
+
+function p04ShowClinicalCase(index){
+  p04ClinicalIndex=index;
+  p04ClinicalCases.forEach(function(card,i){card.classList.toggle('active',i===index)});
+  if(p04ClinicalCounter)p04ClinicalCounter.textContent='Caso '+(index+1)+' de '+p04ClinicalCases.length;
+  if(p04ClinicalProgress)p04ClinicalProgress.style.width=(((index+1)/p04ClinicalCases.length)*100)+'%';
+  if(p04PrevClinical)p04PrevClinical.disabled=index===0;
+  if(p04NextClinical)p04NextClinical.textContent=index===p04ClinicalCases.length-1?'Volver al primero':'Siguiente';
+}
+document.querySelectorAll('.p04-check-clinical').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var card=btn.closest('.p04-clinical-case');
+    var chosen=card.querySelector('input[type="radio"]:checked');
+    var oldError=card.querySelector('.clinical-error');
+    if(!chosen){
+      if(!oldError){oldError=document.createElement('div');oldError.className='clinical-error';oldError.textContent='Selecciona una alternativa antes de comprobar la respuesta.';btn.insertAdjacentElement('afterend',oldError)}
+      oldError.classList.add('show');
+      return;
+    }
+    if(oldError)oldError.classList.remove('show');
+    var feedback=card.querySelector('.clinical-feedback');
+    var correct=chosen.value===card.dataset.correct;
+    feedback.classList.add('show');
+    if(correct){
+      feedback.style.background='#eaf7f0';feedback.style.color='#234f3b';feedback.style.borderColor='#c9ead8';
+    }else{
+      feedback.style.background='#fff3ef';feedback.style.color='#743b2c';feedback.style.borderColor='#f0d3ca';
+    }
+    btn.textContent=correct?'Respuesta correcta':'Revisar explicación';
+  });
+});
+if(p04PrevClinical)p04PrevClinical.addEventListener('click',function(){if(p04ClinicalIndex>0)p04ShowClinicalCase(p04ClinicalIndex-1)});
+if(p04NextClinical)p04NextClinical.addEventListener('click',function(){
+  if(p04ClinicalIndex<p04ClinicalCases.length-1)p04ShowClinicalCase(p04ClinicalIndex+1);
+  else p04ShowClinicalCase(0);
+});
+if(p04ClinicalCases.length)p04ShowClinicalCase(0);
 
 var flashcards=[
 {cat:'Ácido-base',q:'¿Rango de referencia del pH arterial?',a:'7,35–7,45.'},
