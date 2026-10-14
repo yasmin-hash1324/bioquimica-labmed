@@ -54,14 +54,18 @@ body{background:var(--soft);color:var(--ink);line-height:1.6}
 @media(max-width:760px){.head{display:block}.head p{margin-top:10px}.top .wrap{align-items:flex-start;padding:10px 0}.topnav{padding-bottom:6px}.section{padding:62px 0}}
 body.embedded .top{display:none}
 body.embedded .hero{padding-top:38px}
+
+.p04-subnav{position:sticky;top:76px;z-index:35;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:auto}
+.p04-subnav .wrap{display:flex;gap:4px;min-width:max-content}
+.p04-subnav a{padding:13px 11px;font-size:.78rem;font-weight:850;color:#65738a;text-decoration:none;border-bottom:3px solid transparent}
+.p04-subnav a:hover{color:var(--navy);border-color:var(--yellow)}
+body.embedded .p04-subnav{top:0}
 </style>
 </head>
 <body>
 <header class="top">
   <div class="wrap"><div class="brand">Bioquímica <span>LabMed</span></div>
-  <nav class="topnav">
-    <a href="#resumen">Resumen</a><a href="#glosario">Glosario</a><a href="#fundamento">Fundamento</a><a href="#extraccion">Extracción</a><a href="#evidencia">Evidencia</a><a href="#casos">Casos</a><a href="#electrolitos">Electrolitos</a><a href="#discusion">Discusión</a><a href="#flashcards">Flashcards</a><a href="#interpretador">Interpretador</a><a href="#bibliografia">Bibliografía</a>
-  </nav></div>
+  <nav class="topnav"><a href="index.html#practicas">Prácticas</a></nav></div>
 </header>
 
 <section class="hero">
@@ -72,6 +76,10 @@ body.embedded .hero{padding-top:38px}
 <div class="chips"><span class="chip">P04</span><span class="chip">Sangre arterial</span><span class="chip">Gasometría</span><span class="chip">Electrolitos</span><span class="chip">Equilibrio ácido-base</span></div>
 </div>
 </section>
+
+<div class="p04-subnav"><div class="wrap">
+<a href="#resumen">Resumen</a><a href="#glosario">Glosario</a><a href="#fundamento">Fundamento</a><a href="#extraccion">Extracción arterial</a><a href="#evidencia">Evidencia</a><a href="#casos">Casos guiados</a><a href="#electrolitos">Electrolitos</a><a href="#discusion">Discusión</a><a href="#flashcards">Flashcards</a><a href="#interpretador">Interpretador</a><a href="#bibliografia">Bibliografía</a>
+</div></div>
 
 <main>
 <section id="resumen" class="section">
