@@ -123,6 +123,9 @@
   height:100%;
   border:0;
 }
+  
+    .p04-shell{padding:0;background:#F5F8FC}
+    .p04-frame{width:100%;min-height:1200px;border:0;display:block;background:#F5F8FC}
   </style>
 </head>
 <body>
@@ -211,7 +214,7 @@
       <div class="unit-band reveal">
         <small>Primera unidad temática</small>
         <h3>Agua, pH, medio interno, estructura y metabolismo de carbohidratos y proteínas</h3>
-        <p>La Práctica 03 se integra aquí por su relación directa con glucosa, metabolismo de carbohidratos y métodos bioquímicos de determinación.</p>
+        <p>Las Prácticas 03 y 04 se integran en esta unidad por su relación con metabolismo de carbohidratos, pH, medio interno y métodos bioquímicos de interpretación.</p>
       </div>
       <div class="grid g2" style="margin-top:20px">
         <article class="card practice-card reveal">
@@ -223,17 +226,21 @@
           </div>
           <a class="btn btn-primary" href="#p03">Abrir práctica</a>
         </article>
-        <article class="card practice-card soon reveal">
+        <article class="card practice-card reveal">
           <div>
-            <div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><span class="tag">PRÓXIMA</span><span class="status">Pendiente</span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><span class="tag">NUEVA PRÁCTICA</span><span class="status">Publicada</span></div>
             <div class="num">P04</div>
-            <h3>Próxima práctica</h3>
-            <p>Se incorporará en la siguiente actualización del portafolio.</p>
+            <h3>Del pulso al equilibrio</h3>
+            <p>Obtención de sangre arterial, gasometría, electrolitos plasmáticos y razonamiento ácido-base.</p>
           </div>
-          <span class="btn btn-ghost" aria-disabled="true">Próximamente</span>
+          <a class="btn btn-primary" href="#p04">Abrir práctica</a>
         </article>
       </div>
     </div>
+  </section>
+
+  <section class="practice-shell panel-section p04-shell" id="p04" data-panel-title="Práctica 04">
+    <iframe id="p04Frame" class="p04-frame" src="p04-preview.html?embed=1" title="Práctica 04 · Del pulso al equilibrio" loading="eager"></iframe>
   </section>
 
   <section class="practice-shell panel-section" id="p03" data-panel-title="Práctica 03">
@@ -584,7 +591,7 @@ document.querySelectorAll('.hotspot').forEach(b=>b.addEventListener('click',()=>
   labInfo.innerHTML=`<div class="mini">${x.n}</div><h3>${x.t}</h3><p>${x.d}</p><div class="zoom-hint">Tip: toca la fotografía para verla en grande y ubicar mejor cada material.</div>`;
 }));
 
-const panelIds=['inicio','glosario','practicas','p03','casos','flashcards','recursos'];
+const panelIds=['inicio','glosario','practicas','p03','p04','casos','flashcards','recursos'];
 const panelSections=panelIds.map(id=>document.getElementById(id)).filter(Boolean);
 const panelTitle=document.getElementById('panelTitle');
 const panelCounter=document.getElementById('panelCounter');
@@ -611,6 +618,7 @@ function resolveTarget(hash){
   if(panelIds.includes(hash)) return {panel:hash,sub:null};
   if(hash==='laboratorio') return {panel:'p03',sub:'laboratorio'};
   if(hash.startsWith('p03-')) return {panel:'p03',sub:hash};
+  if(hash.startsWith('p04-')) return {panel:'p04',sub:null};
   return null;
 }
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
@@ -684,6 +692,31 @@ const grid=document.getElementById('flashGrid');
 function renderFlash(filter='all'){grid.innerHTML='';flashcards.filter(x=>filter==='all'||x.c===filter).forEach((x,i)=>{const el=document.createElement('article');el.className='flashcard';el.tabIndex=0;el.setAttribute('aria-label','Flashcard '+(i+1));el.innerHTML=`<div class="flash-inner"><div class="face front"><small>${x.c}</small><strong>${x.q}</strong><span class="tap">Toca para revelar</span></div><div class="face back"><small>Respuesta</small><strong>${x.a}</strong><span class="tap">Toca para volver</span></div></div>`;const flip=()=>el.classList.toggle('flipped');el.addEventListener('click',flip);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();flip()}});grid.appendChild(el)})}
 renderFlash();
 document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderFlash(b.dataset.filter)}));
+
+const p04Frame=document.getElementById('p04Frame');
+function resizeP04Frame(){
+  if(!p04Frame) return;
+  try{
+    const doc=p04Frame.contentDocument;
+    if(!doc) return;
+    const h=Math.max(doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0);
+    if(h) p04Frame.style.height=(h+8)+'px';
+  }catch(e){}
+}
+if(p04Frame){
+  p04Frame.addEventListener('load',()=>{
+    resizeP04Frame();
+    try{
+      const doc=p04Frame.contentDocument;
+      if(doc&&window.ResizeObserver){
+        const ro=new ResizeObserver(resizeP04Frame);
+        ro.observe(doc.documentElement);
+      }
+    }catch(e){}
+    setTimeout(resizeP04Frame,400);
+    setTimeout(resizeP04Frame,1200);
+  });
+}
 
 </script>
 </body>
