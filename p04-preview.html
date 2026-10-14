@@ -96,6 +96,30 @@ body.embedded .p04-subnav{top:0}
 .clinical-error.show{display:block}
 .clinical-nav{display:flex;justify-content:space-between;gap:12px;margin-top:23px;border-top:1px solid var(--line);padding-top:19px}
 @media(max-width:700px){.clinical-options{grid-template-columns:1fr}.clinical-quiz-shell{padding:18px}.clinical-progress{align-items:flex-start;flex-direction:column}.clinical-track{width:100%}}
+
+.abg-route{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px;background:linear-gradient(145deg,#f7fbff,#eef8f7);border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:0 10px 34px rgba(15,47,101,.07);overflow:visible}
+.route-step{position:relative;background:#fff;border:1px solid #d9e8f2;border-radius:20px;padding:38px 16px 18px;text-align:center;min-height:228px;display:flex;flex-direction:column;align-items:center;box-shadow:0 10px 26px rgba(15,47,101,.06)}
+.route-step:not(:last-child)::after{content:"";position:absolute;top:50%;right:-24px;width:24px;height:3px;background:var(--teal2);transform:translateY(-50%);z-index:2}
+.route-step:not(:last-child)::before{content:"";position:absolute;top:50%;right:-25px;border-left:8px solid var(--teal2);border-top:6px solid transparent;border-bottom:6px solid transparent;transform:translate(1px,-50%);z-index:3}
+.route-num{position:absolute;top:-15px;left:50%;transform:translateX(-50%);width:36px;height:36px;border-radius:50%;background:var(--yellow);color:#0E2A67;display:grid;place-items:center;font-weight:950;border:3px solid #fff;box-shadow:0 6px 16px rgba(14,42,103,.15)}
+.route-icon{width:58px;height:58px;border-radius:18px;background:#e8f7f7;color:var(--teal2);display:grid;place-items:center;font-weight:950;font-size:1rem;margin-bottom:14px;border:1px solid #caeceb}
+.route-step h3{font-size:1rem;color:var(--navy);margin:0 0 8px;letter-spacing:-.02em}
+.route-step p{font-size:.82rem;color:var(--muted);margin:0;line-height:1.45}
+.reference-card{text-align:center}
+.reference-card h3{font-size:1.15rem;color:var(--navy);margin-bottom:10px}
+.reference-card .bigstat{margin-bottom:10px}
+@media(max-width:1050px){
+  .abg-route{grid-template-columns:repeat(3,1fr);row-gap:34px}
+  .route-step:nth-child(3)::after,.route-step:nth-child(6)::after{display:none}
+  .route-step:nth-child(3)::before,.route-step:nth-child(6)::before{display:none}
+}
+@media(max-width:700px){
+  .abg-route{grid-template-columns:1fr;gap:28px;padding:22px}
+  .route-step{min-height:auto;padding:36px 20px 20px}
+  .route-step:not(:last-child)::after{top:auto;right:50%;bottom:-28px;width:3px;height:28px;transform:translateX(50%)}
+  .route-step:not(:last-child)::before{top:auto;right:50%;bottom:-29px;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid var(--teal2);border-bottom:0;transform:translate(50%,1px)}
+  .route-step:nth-child(3)::after,.route-step:nth-child(3)::before{display:block}
+}
 </style>
 </head>
 <body>
@@ -147,29 +171,79 @@ body.embedded .p04-subnav{top:0}
 
 <section id="fundamento" class="section">
 <div class="wrap">
-<div class="head"><div><div class="kicker">03 · Fundamento bioquímico</div><h2>Gasometría arterial: de la muestra a la interpretación</h2></div><p>El esquema reemplaza la diapositiva fotografiada y organiza el fundamento como una ruta de análisis.</p></div>
-<div class="flow">
-<div class="flowrow">
-<div class="node navy"><b>Muestra arterial heparinizada</b><p>Permite estudiar equilibrio ácido-base y oxigenación.</p></div>
+  <div class="head">
+    <div>
+      <div class="kicker">03 · Fundamento bioquímico</div>
+      <h2>Gasometría arterial: de la muestra a la interpretación</h2>
+    </div>
+    <p>La lectura comienza con el pH, continúa con la identificación del componente respiratorio o metabólico y finaliza integrando compensación y electrolitos.</p>
+  </div>
 
-<div class="node"><b>Mediciones directas</b><p>pH · PaCO₂ · PaO₂</p></div>
+  <div class="abg-route" aria-label="Ruta de análisis de gasometría arterial">
+    <article class="route-step">
+      <span class="route-num">1</span>
+      <div class="route-icon">M</div>
+      <h3>Muestra arterial</h3>
+      <p>Muestra obtenida con jeringa previamente heparinizada.</p>
+    </article>
+    <article class="route-step">
+      <span class="route-num">2</span>
+      <div class="route-icon">pH</div>
+      <h3>Medición de parámetros</h3>
+      <p>pH, PCO₂, HCO₃⁻ y PaO₂ constituyen la base del análisis.</p>
+    </article>
+    <article class="route-step">
+      <span class="route-num">3</span>
+      <div class="route-icon">±</div>
+      <h3>Acidemia o alcalemia</h3>
+      <p>El pH establece la dirección inicial del trastorno ácido-base.</p>
+    </article>
+    <article class="route-step">
+      <span class="route-num">4</span>
+      <div class="route-icon">R/M</div>
+      <h3>Trastorno primario</h3>
+      <p>PCO₂ orienta al componente respiratorio y HCO₃⁻ al metabólico.</p>
+    </article>
+    <article class="route-step">
+      <span class="route-num">5</span>
+      <div class="route-icon">Δ</div>
+      <h3>Compensación</h3>
+      <p>Se compara el valor observado con la respuesta fisiológica esperada.</p>
+    </article>
+    <article class="route-step">
+      <span class="route-num">6</span>
+      <div class="route-icon">Na⁺</div>
+      <h3>Integración</h3>
+      <p>Electrolitos, anión gap y contexto clínico completan la interpretación.</p>
+    </article>
+  </div>
 
-<div class="node yellow"><b>Integración</b><p>HCO₃⁻ · BE · SatO₂ · electrolitos</p></div>
-</div>
-<div class="grid3" style="margin-top:18px">
-<div class="card"><div class="bigstat">7,35–7,45</div><h3>pH</h3><p>&lt;7,35: acidemia · &gt;7,45: alcalemia.</p></div>
-<div class="card"><div class="bigstat">35–45</div><h3>PCO₂</h3><p>↑ tendencia acidótica respiratoria · ↓ tendencia alcalótica.</p></div>
-<div class="card"><div class="bigstat">24 ± 2</div><h3>HCO₃⁻</h3><p>↓ tendencia acidótica metabólica · ↑ tendencia alcalótica.</p></div>
-</div>
-<div class="equation" style="margin-top:18px">CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻</div>
-<div class="callout"><b>Regla clave:</b> PCO₂ o HCO₃⁻ aislados no determinan por sí solos el trastorno primario. Primero se interpreta el pH, luego se identifica la variable que explica su dirección y finalmente se comprueba la compensación.</div>
-</div>
+  <div class="grid3 abg-reference" style="margin-top:24px">
+    <div class="card reference-card">
+      <h3>pH</h3>
+      <div class="bigstat">7,35–7,45</div>
+      <p>&lt;7,35: acidemia · &gt;7,45: alcalemia.</p>
+    </div>
+    <div class="card reference-card">
+      <h3>PCO₂</h3>
+      <div class="bigstat">35–45 mmHg</div>
+      <p>Elevada favorece acidosis respiratoria; disminuida favorece alcalosis respiratoria.</p>
+    </div>
+    <div class="card reference-card">
+      <h3>HCO₃⁻</h3>
+      <div class="bigstat">22–26 mmol/L</div>
+      <p>Disminuido favorece acidosis metabólica; elevado favorece alcalosis metabólica.</p>
+    </div>
+  </div>
+
+  <div class="equation" style="margin-top:18px">CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻</div>
+  <div class="callout"><b>Regla clave:</b> PCO₂ o HCO₃⁻ aislados no determinan por sí solos el trastorno primario. Primero se interpreta el pH, después se identifica la variable que explica su dirección y finalmente se comprueba la compensación.</div>
 </div>
 </section>
 
 <section id="extraccion" class="section alt">
 <div class="wrap">
-<div class="head"><div><div class="kicker">04 · Procedimiento</div><h2>Preparación heparinizada y punción arterial</h2></div><p>La secuencia reproduce la práctica realizada, incluida la sustitución temporal de la aguja fina antes de manipular el frasco de heparina.</p></div>
+<div class="head"><div><div class="kicker">04 · Procedimiento</div><h2>Preparación heparinizada y punción arterial</h2></div></div>
 <div class="timeline">
 <div class="step"><div><b>Preparar los materiales.</b><br><span class="subtle">Organizar la jeringa de tuberculina, agujas, heparina y material de bioseguridad.</span></div></div>
 <div class="step"><div><b>Sustituir temporalmente la aguja fina.</b><br><span class="subtle">Se coloca una aguja convencional de mayor calibre para evitar deteriorar la punta destinada a la punción arterial.</span></div></div>
