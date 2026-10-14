@@ -125,7 +125,7 @@
 }
   
     .p04-shell{padding:0;background:#F5F8FC}
-    .p04-frame{width:100%;min-height:1200px;border:0;display:block;background:#F5F8FC}
+    .p04-frame{width:100%;height:1400px;min-height:1400px;border:0;display:block;background:#F5F8FC;overflow:hidden}
   </style>
 </head>
 <body>
@@ -142,6 +142,7 @@
       <ul>
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#practicas">Prácticas</a></li>
+        <li><a href="#p04">Práctica 04</a></li>
         <li><a href="#glosario">Glosario</a></li>
         <li><a href="#casos">Casos clínicos</a></li>
         <li><a href="#flashcards">Flashcards</a></li>
@@ -170,7 +171,8 @@
         <p class="lead">Portafolio interactivo de prácticas de laboratorio. Integra fundamento bioquímico, evidencia experimental, resultados, discusión, aplicación clínica y repaso activo.</p>
         <div class="hero-actions">
           <a href="#p03" class="btn btn-primary">Explorar Práctica 03 →</a>
-          <a href="#laboratorio" class="btn btn-accent">Laboratorio interactivo</a>
+          <a href="#p04" class="btn btn-accent">Explorar Práctica 04</a>
+          <a href="#laboratorio" class="btn btn-ghost">Laboratorio interactivo P03</a>
         </div>
       </div>
       <aside class="identity-card reveal">
@@ -240,7 +242,7 @@
   </section>
 
   <section class="practice-shell panel-section p04-shell" id="p04" data-panel-title="Práctica 04">
-    <iframe id="p04Frame" class="p04-frame" src="p04-preview.html?embed=1&v=20261014-final" title="Práctica 04 · Del pulso al equilibrio" loading="eager"></iframe>
+    <iframe id="p04Frame" class="p04-frame" src="p04-preview.html?embed=1&v=20261014-2" title="Práctica 04 · Del pulso al equilibrio" loading="eager"></iframe>
   </section>
 
   <section class="practice-shell panel-section" id="p03" data-panel-title="Práctica 03">
@@ -606,6 +608,7 @@ function updatePanelUI(id){
 function activatePanel(id,subId){
   panelSections.forEach(sec=>sec.classList.toggle('active',sec.id===id));
   updatePanelUI(id);
+  if(id==='p04'){setTimeout(()=>{if(typeof resizeP04Frame==='function')resizeP04Frame()},120);setTimeout(()=>{if(typeof resizeP04Frame==='function')resizeP04Frame()},700);}
   window.scrollTo({top:0,behavior:'smooth'});
   setTimeout(()=>{
     if(subId){
@@ -618,7 +621,7 @@ function resolveTarget(hash){
   if(panelIds.includes(hash)) return {panel:hash,sub:null};
   if(hash==='laboratorio') return {panel:'p03',sub:'laboratorio'};
   if(hash.startsWith('p03-')) return {panel:'p03',sub:hash};
-  if(hash.startsWith('p04-')) return {panel:'p04',sub:null};
+  if(hash==='p04'||hash.startsWith('p04-')) return {panel:'p04',sub:null};
   return null;
 }
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
@@ -699,22 +702,28 @@ function resizeP04Frame(){
   try{
     const doc=p04Frame.contentDocument;
     if(!doc) return;
-    const h=Math.max(doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0);
-    if(h) p04Frame.style.height=(h+8)+'px';
+    const h=Math.max(
+      doc.documentElement.scrollHeight,
+      doc.body?doc.body.scrollHeight:0,
+      doc.documentElement.offsetHeight,
+      doc.body?doc.body.offsetHeight:0
+    );
+    if(h>1200)p04Frame.style.height=(h+24)+'px';
   }catch(e){}
 }
+window.addEventListener('message',function(e){
+  if(!p04Frame || e.source!==p04Frame.contentWindow) return;
+  if(e.data && e.data.type==='p04-height'){
+    const h=Number(e.data.height);
+    if(Number.isFinite(h) && h>1200)p04Frame.style.height=(h+24)+'px';
+  }
+});
 if(p04Frame){
-  p04Frame.addEventListener('load',()=>{
+  p04Frame.addEventListener('load',function(){
     resizeP04Frame();
-    try{
-      const doc=p04Frame.contentDocument;
-      if(doc&&window.ResizeObserver){
-        const ro=new ResizeObserver(resizeP04Frame);
-        ro.observe(doc.documentElement);
-      }
-    }catch(e){}
-    setTimeout(resizeP04Frame,400);
-    setTimeout(resizeP04Frame,1200);
+    setTimeout(resizeP04Frame,300);
+    setTimeout(resizeP04Frame,1000);
+    setTimeout(resizeP04Frame,2200);
   });
 }
 </script>
