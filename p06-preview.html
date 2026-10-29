@@ -80,7 +80,7 @@
       const right=cases.filter(c=>progress.cases[c.id]===c.respuesta).length;
       document.getElementById('caseProgressText').textContent=`${n} de ${cases.length} casos resueltos`;
       document.getElementById('caseProgressFill').style.width=(100*n/cases.length)+'%';
-      document.getElementById('caseScore').textContent=`${right} respuestas correctas al primer intento`;
+      document.getElementById('caseScore').textContent=`${right} ${right===1?'respuesta correcta':'respuestas correctas'} al primer intento`;
     }
     function renderCase(){
       updateCaseStats();
