@@ -127,7 +127,7 @@
 .practice-shortcuts{display:flex;gap:14px;flex-wrap:wrap}
 .practice-shortcuts .practice-btn{color:#fff;border:0;box-shadow:0 10px 24px rgba(17,45,97,.14);transition:.2s ease}
 .practice-shortcuts .practice-btn:hover{transform:translateY(-2px)}
-.practice-btn-03{background:#3978C7}.practice-btn-04{background:#1F559D}
+.practice-btn-03{background:#3978C7}.practice-btn-04{background:#1F559D}.practice-btn-06{background:#168E91}
 .practice-grid .practice-card:nth-child(1){border-top:5px solid #3978C7}
 .practice-grid .practice-card:nth-child(2){border-top:5px solid #1F559D}
 .practice-grid .practice-card:nth-child(3){border-top:5px solid #163B8C}
@@ -135,11 +135,14 @@
 .practice-local-section{padding:72px 0}
 .p04-shell{padding:0;background:#F5F8FC}
 .p04-frame{width:100%;height:1400px;min-height:1400px;border:0;display:block;background:#F5F8FC;overflow:hidden}
+.p06-shell{padding:0;background:#F5F8FC}
+.p06-frame{width:100%;height:1400px;min-height:1400px;border:0;display:block;background:#F5F8FC;overflow:hidden}
 .global-library{padding:76px 0}
 .global-practice-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .global-practice-card{padding:26px;border-radius:24px}
 .global-practice-card.p03-tone{border-top:6px solid #3978C7}
 .global-practice-card.p04-tone{border-top:6px solid #1F559D}
+.global-practice-card.p06-tone{border-top:6px solid #168E91}
 .global-card-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
 .global-card-head h3{margin:9px 0 0;font-size:1.25rem}
 .global-card-head>strong{color:var(--navy);white-space:nowrap}
@@ -185,7 +188,7 @@
         <p class="lead">Portafolio interactivo de prácticas de laboratorio. Integra fundamento bioquímico, evidencia experimental, resultados, discusión, aplicación clínica y repaso activo.</p>
         <div class="hero-actions practice-shortcuts">
     <a href="#p03" class="btn practice-btn practice-btn-03">Explorar Práctica 03 →</a>
-    <a href="#p04" class="btn practice-btn practice-btn-04">Explorar Práctica 04 →</a><a href="#p05" class="btn btn-primary">Explorar Práctica 05 →</a>
+    <a href="#p04" class="btn practice-btn practice-btn-04">Explorar Práctica 04 →</a><a href="#p05" class="btn btn-primary">Explorar Práctica 05 →</a><a href="#p06" class="btn practice-btn practice-btn-06">Explorar Práctica 06 →</a>
   </div>
       </div>
       <aside class="identity-card reveal">
@@ -231,6 +234,12 @@
   </div>
   <a class="btn btn-primary" href="#p04">Abrir práctica</a>
 </article><article class="card practice-card reveal"><div><span class="status">Publicada</span><div class="num">P05</div><h3>Glucosa en movimiento</h3><p>Carga oral de glucosa, ejercicio físico y regulación de la glucemia.</p></div><a class="btn btn-primary" href="#p05">Abrir práctica</a></article>
+        <article class="card practice-card reveal">
+          <div><div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><span class="tag">UNIDAD I</span><span class="status">Publicada</span></div>
+            <div class="num">P06</div><h3>Proteínas que cuentan historias</h3>
+            <p>Determinación cualitativa de proteínas, hemoglobina, hematocrito y tiempo de protrombina; 10 casos y 15 flashcards.</p>
+          </div><a class="btn btn-primary" href="#p06">Abrir práctica</a>
+        </article>
       </div>
     </div>
   </section>
@@ -239,6 +248,9 @@
 <section id="p05" class="practice-shell panel-section" data-panel-title="Práctica 05"><div class="container practice-hero"><div class="meta"><span class="pill">P05</span><span class="pill">9 participantes</span><span class="pill">36 mediciones</span></div><h2>Glucosa en <em>movimiento</em></h2><p class="subtitle">Metabolismo de la glucosa y su relación con la diabetes. Dos experiencias: carga oral de glucosa en reposo y ejercicio después del desayuno.</p><a class="btn btn-primary" href="downloads/Practica_05_Cuestionario_Vallery_Cuayla.docx">Descargar cuestionario Word ↓</a></div><div class="subnav"><div class="container"><a href="#p05-protocolo">Experimentos</a><a href="#p05-carga">Carga de glucosa</a><a href="#p05-ejercicio">Ejercicio</a><a href="#p05-discusion">Discusión</a><a href="#p05-evidencia">Fotografías</a><a href="#p05-conclusiones">Conclusiones</a><a href="#p05-recursos">Bibliografía</a></div></div><section id="p05-protocolo"><div class="container"><div class="section-head"><div><div class="kicker">Práctica 05</div><h2>Dos condiciones experimentales</h2></div></div><div class="grid g2"><article class="card method"><div class="icon">01</div><h3>Carga de glucosa · n = 4</h3><p>Ayuno mayor de 8 horas. Cada participante ingirió 75 g de glucosa disuelta en agua y permaneció sentado, sin esfuerzo físico. Glucemia inicial, a los 30 y 60 minutos y al cierre, aproximadamente a los 120 minutos.</p><div class="arrowline">Ayuno → <b>75 g de glucosa</b> → reposo → controles</div></article><article class="card method"><div class="icon">02</div><h3>Ejercicio · n = 5</h3><p>Desayuno previo. Actividad en caminadora o bicicleta y seguimiento de glucemia al inicio, 15, 30 y 45 minutos. La medición inicial es preejercicio, no en ayunas. No se dispone de intensidad ni tiempo efectivo de ejercicio por participante.</p><div class="arrowline">Desayuno → <b>ejercicio</b> → controles</div></article></div><div class="insight">Mediciones capilares con glucómetro, expresadas en mg/dL. Se excluye el control adicional de Milton a aproximadamente 60 minutos (88 mg/dL), porque no se realizó en todo el grupo. La numeración P05 sigue el portafolio; la guía del mismo tema está rotulada N.° 04.</div></div></section><section id="p05-carga"><div class="container"><div class="section-head"><div><div class="kicker">Práctica 05</div><h2>Respuesta a 75 g de glucosa</h2></div></div><div class="table-wrap"><table><thead><tr><th>Participante</th><th>Ayunas</th><th>30 min</th><th>60 min</th><th>≈120 min</th><th>Δ final</th></tr></thead><tbody><tr><td>Ángel</td><td>101</td><td>150</td><td>154</td><td>107</td><td>+6</td></tr><tr><td>Deida Solymar</td><td>80</td><td>152</td><td>104</td><td>85</td><td>+5</td></tr><tr><td>Vallery</td><td>92</td><td>179</td><td>164</td><td>128</td><td>+36</td></tr><tr><td>Hitler Sebastián</td><td>96</td><td>151</td><td>105</td><td>90</td><td>-6</td></tr></tbody></table></div><div class="card card-pad"><div class="p05-controls" data-chart="p05-carga-chart"><button type="button" aria-pressed="true" data-series="0">Ángel</button><button type="button" aria-pressed="true" data-series="1">Deida Solymar</button><button type="button" aria-pressed="true" data-series="2">Vallery</button><button type="button" aria-pressed="true" data-series="3">Hitler Sebastián</button></div><div class="p05-chart" id="p05-carga-chart"></div><p class="caption">Toca un nombre para mostrar u ocultar su curva. Todos los valores están en mg/dL; las líneas solo conectan mediciones.</p></div><div class="stat-row"><div class="stat"><b>92,25 → 158</b><span>media inicial y a 30 min</span></div><div class="stat"><b>102,5</b><span>media final, ≈120 min</span></div><div class="stat"><b>179</b><span>máximo observado: Vallery, 30 min</span></div></div><p>Ángel alcanzó su máximo observado a los 60 minutos (154); Deida Solymar, Vallery y Hitler Sebastián lo hicieron a los 30 minutos (152, 179 y 151). Los cuatro valores finales fueron inferiores a sus máximos. Vallery terminó 36 mg/dL por encima de su basal; Ángel, 6; Deida Solymar, 5; Hitler Sebastián, 6 por debajo.</p></div></section><section id="p05-ejercicio"><div class="container"><div class="section-head"><div><div class="kicker">Práctica 05</div><h2>Respuesta durante el seguimiento de ejercicio</h2></div></div><div class="table-wrap"><table><thead><tr><th>Participante</th><th>Inicial</th><th>15 min</th><th>30 min</th><th>45 min</th><th>Δ final</th></tr></thead><tbody><tr><td>Ariana</td><td>104</td><td>88</td><td>94</td><td>95</td><td>-9</td></tr><tr><td>Shaday</td><td>91</td><td>95</td><td>125</td><td>103</td><td>+12</td></tr><tr><td>Albert</td><td>96</td><td>79</td><td>92</td><td>101</td><td>+5</td></tr><tr><td>Diego</td><td>99</td><td>93</td><td>91</td><td>96</td><td>-3</td></tr><tr><td>Milton</td><td>90</td><td>82</td><td>93</td><td>83</td><td>-7</td></tr></tbody></table></div><div class="card card-pad"><div class="p05-controls" data-chart="p05-ejercicio-chart"><button type="button" aria-pressed="true" data-series="0">Ariana</button><button type="button" aria-pressed="true" data-series="1">Shaday</button><button type="button" aria-pressed="true" data-series="2">Albert</button><button type="button" aria-pressed="true" data-series="3">Diego</button><button type="button" aria-pressed="true" data-series="4">Milton</button></div><div class="p05-chart" id="p05-ejercicio-chart"></div><p class="caption">Toca un nombre para mostrar u ocultar su curva. Todos los valores están en mg/dL; las líneas solo conectan mediciones.</p></div><div class="stat-row"><div class="stat"><b>96 → 87,4</b><span>media inicial y a 15 min</span></div><div class="stat"><b>95,6</b><span>media a 45 min</span></div><div class="stat"><b>125</b><span>máximo observado: Shaday, 30 min</span></div></div><p>A los 15 minutos, cuatro de cinco participantes presentaron un descenso respecto al inicio. Shaday aumentó de 91 a 95 y alcanzó 125 a los 30 minutos, antes de bajar a 103. Al final, Ariana, Diego y Milton quedaron por debajo de su valor inicial; Albert y Shaday, por encima. No se observó un descenso sostenido y uniforme.</p></div></section><section id="p05-discusion"><div class="container"><div class="section-head"><div><div class="kicker">Práctica 05</div><h2>Del dato a la explicación</h2></div></div><div class="grid g2"><article class="card method"><h3>Absorción y almacenamiento</h3><p>La glucosa oral se absorbe en el intestino y eleva la glucemia. La insulina favorece su captación y almacenamiento, mientras disminuye la producción hepática. El ascenso seguido de descenso en las cuatro curvas es compatible con esta regulación; no se midió insulina ni se puede cuantificar su sensibilidad con estos datos [5].</p></article><article class="card method"><h3>Demanda muscular y aporte hepático</h3><p>La contracción promueve captación de glucosa mediante GLUT4 por vías que no dependen exclusivamente de insulina. Al mismo tiempo, el hígado aporta glucosa. La ingesta previa, intensidad y respuesta hormonal pueden modificar el balance; son explicaciones posibles de las variaciones, no causas comprobadas en cada participante [4,5].</p></article></div><div class="insight"><strong>Interpretación clínica prudente.</strong> Los cuatro valores finales de la carga están por debajo de 140 mg/dL, pero se obtuvieron con glucómetro y en un horario aproximado. No permiten clasificar a los participantes como sanos, prediabéticos o diabéticos. Tampoco el basal de Ángel de 101 mg/dL establece prediabetes por sí solo [1,2].</div><p><strong>Limitaciones:</strong> muestra pequeña, grupos diferentes, desayuno no estandarizado, intensidad del ejercicio no registrada, control final poscarga aproximado y ausencia de medición venosa confirmatoria. La comparación es descriptiva: no demuestra que una intervención sea superior a la otra. No se registraron controles suficientes para conocer el pico real entre mediciones.</p></div></section><section id="p05-evidencia"><div class="container"><div class="section-head"><div><div class="kicker">Práctica 05</div><h2>Evidencia de la práctica</h2></div></div><div class="grid g2"><figure class="card card-pad"><img class="zoomable" loading="lazy" src="assets/p05-evidencia-1.jpg" alt="Hoja de registro manuscrito de los cinco participantes del grupo de ejercicio"><figcaption>Registro original de ejercicio. Los datos del informe corresponden a los cuatro tiempos comunes.</figcaption></figure><figure class="card card-pad"><img class="zoomable" loading="lazy" src="assets/p05-evidencia-2.jpg" alt="Glucómetro y toma capilar durante la práctica"><figcaption>Medición capilar durante la práctica. La fotografía no se asigna a un participante o tiempo concreto.</figcaption></figure></div><a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1hpoVXUPgIZ_GV6o4zwfBmpwxXZ-xj1SE" target="_blank" rel="noopener">Abrir carpeta de fotografías y videos ↗</a></div></section><section id="p05-conclusiones"><div class="container"><div class="section-head"><div><div class="kicker">Práctica 05</div><h2>Qué muestran los resultados</h2></div></div><div class="grid g3"><article class="card method"><h3>01 · Respuesta poscarga</h3><p>Los cuatro participantes mostraron un ascenso de glucosa seguido de descenso al cierre. Las alturas y los momentos de los máximos observados fueron diferentes.</p></article><article class="card method"><h3>02 · Respuesta al ejercicio</h3><p>Predominó el descenso inicial, con recuperación o aumento posterior variable. La media final fue cercana a la inicial y no representa por sí sola las cinco trayectorias.</p></article><article class="card method"><h3>03 · Alcance docente</h3><p>La práctica ilustra la regulación dinámica de la glucosa. Los registros permiten discutir mecanismos y limitaciones, pero no establecer diagnósticos individuales.</p></article></div></div></section><section id="p05-recursos"><div class="container"><div class="section-head"><div><div class="kicker">Práctica 05</div><h2>Fuentes y cuestionario</h2></div></div><article class="card card-pad"><ol class="bibliography"><li>American Diabetes Association Professional Practice Committee. Diagnosis and Classification of Diabetes: Standards of Care in Diabetes—2026. Diabetes Care. 2026;49(Suppl 1):S27–S49. <a href="https://doi.org/10.2337/dc26-S002" target="_blank" rel="noopener">Consultar ↗</a></li><li>National Institute of Diabetes and Digestive and Kidney Diseases. Diabetes Tests & Diagnosis. <a href="https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis" target="_blank" rel="noopener">Consultar ↗</a></li><li>Phillips PJ. Oral glucose tolerance testing. Australian Family Physician. 2012;41(6):391–393. <a href="https://www.racgp.org.au/afp/2012/june/oral-glucose-tolerance-testing" target="_blank" rel="noopener">Consultar ↗</a></li><li>Colberg SR, et al. Physical Activity/Exercise and Diabetes: A Position Statement of the American Diabetes Association. Diabetes Care. 2016;39(11):2065–2079. <a href="https://doi.org/10.2337/dc16-1728" target="_blank" rel="noopener">Consultar ↗</a></li><li>Rodwell VW, et al. Harper. Bioquímica ilustrada. 31.ª ed. McGraw-Hill; 2019. Cap. 19: Gluconeogénesis y el control de la glucosa en sangre.</li><li>Universidad Nacional de Moquegua. Guía de prácticas de Bioquímica Médica: Metabolismo de la glucosa, su relación con la diabetes. Guía rotulada N.° 04, pp. 23–28; material de clase PRACT 5 REAL.</li></ol><a class="btn btn-primary" href="downloads/Practica_05_Cuestionario_Vallery_Cuayla.docx">Cuestionario resuelto · Word ↓</a></article></div></section></section>
 <section class="practice-shell panel-section p04-shell" id="p04" data-panel-title="Práctica 04">
   <iframe id="p04Frame" class="p04-frame" src="p04-preview.html?embed=1&v=20261014-6" title="Práctica 04 · Del pulso al equilibrio" loading="eager"></iframe>
+</section>
+<section class="practice-shell panel-section p06-shell" id="p06" data-panel-title="Práctica 06">
+  <iframe id="p06Frame" class="p06-frame" src="p06-preview.html?embed=1&v=20261029-1" title="Práctica 06 · Proteínas que cuentan historias" loading="eager"></iframe>
 </section>
 <section class="practice-shell panel-section" id="p03" data-panel-title="Práctica 03">
     <div class="container practice-hero">
@@ -587,6 +599,22 @@
         <ol class="case-library-list"><li><span class="case-index">01</span><span>Hipoventilación por opioides</span></li><li><span class="case-index">02</span><span>Crisis de ansiedad</span></li><li><span class="case-index">03</span><span>Vómitos persistentes</span></li><li><span class="case-index">04</span><span>Cetoacidosis diabética</span></li><li><span class="case-index">05</span><span>Diarrea intensa</span></li><li><span class="case-index">06</span><span>Sepsis y trastorno mixto</span></li><li><span class="case-index">07</span><span>Enfermedad renal e hiperpotasemia</span></li></ol>
         <a class="btn btn-primary" href="#p04-casos">Resolver casos de P04</a>
       </article>
+      <article class="card global-practice-card reveal p06-tone">
+        <div class="global-card-head"><div><span class="tag">P06</span><h3>Proteínas, hemoglobina y hemostasia</h3></div><strong>10 casos</strong></div>
+        <ol class="case-library-list">
+          <li><span class="case-index">01</span><span>Edema e hipoalbuminemia</span></li>
+          <li><span class="case-index">02</span><span>Cálculos y cistinuria</span></li>
+          <li><span class="case-index">03</span><span>Homocistinuria y trombosis</span></li>
+          <li><span class="case-index">04</span><span>Fenilcetonuria</span></li>
+          <li><span class="case-index">05</span><span>Anemia ferropénica</span></li>
+          <li><span class="case-index">06</span><span>Enfermedad por hemoglobina H</span></li>
+          <li><span class="case-index">07</span><span>Vitamina K y TP prolongado</span></li>
+          <li><span class="case-index">08</span><span>Hemofilia A</span></li>
+          <li><span class="case-index">09</span><span>Coagulación intravascular diseminada</span></li>
+          <li><span class="case-index">10</span><span>Hemólisis y G6PD</span></li>
+        </ol>
+        <a class="btn btn-primary" href="#p06-casos">Resolver casos de P06</a>
+      </article>
     </div>
   </div>
 </section>
@@ -601,6 +629,7 @@
       <button class="gchip active" data-filter="all">Todas</button>
       <button class="gchip" data-filter="P03">P03</button>
       <button class="gchip" data-filter="P04">P04</button>
+      <button class="gchip" data-filter="P06">P06</button>
       <button class="gchip" data-filter="homeostasis">Homeostasis</button>
       <button class="gchip" data-filter="metodos">Métodos</button>
       <button class="gchip" data-filter="rinon">Riñón</button>
@@ -609,6 +638,11 @@
       <button class="gchip" data-filter="compensacion">Compensación</button>
       <button class="gchip" data-filter="muestra">Muestra arterial</button>
       <button class="gchip" data-filter="electrolitos">Electrolitos</button>
+      <button class="gchip" data-filter="proteinas">Proteínas</button>
+      <button class="gchip" data-filter="aromaticos">Aromáticos</button>
+      <button class="gchip" data-filter="azufrados">Azufrados</button>
+      <button class="gchip" data-filter="hemoglobina">Hemoglobina</button>
+      <button class="gchip" data-filter="coagulacion">Coagulación</button>
     </div>
     <div class="flashgrid" id="globalFlashGrid"></div>
   </div>
@@ -617,6 +651,7 @@
 
 <footer><div class="container footer-grid"><div><strong>Bioquímica LabMed</strong><p>Portafolio interactivo de prácticas de laboratorio</p><p>Universidad Nacional de Moquegua · Escuela Profesional de Medicina</p></div><div class="foot-right"><p>Vallery Y. Cuayla Platero · Grupo A</p><p>Docente: M.C. Clinthon Oliver Ugarte Espinoza</p><p>Jefa de prácticas: Lic. Judith Melania Coaquira Quispe</p></div></div></footer>
 
+<script src="p06-data.js"></script>
 <script>
 const menuBtn=document.getElementById('menuBtn'),mainNav=document.getElementById('mainNav');menuBtn.addEventListener('click',()=>mainNav.classList.toggle('open'));mainNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mainNav.classList.remove('open')));
 const progress=document.getElementById('progress');window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h?scrollY/h*100:0)+'%'});
@@ -643,11 +678,21 @@ document.querySelectorAll('.hotspot').forEach(b=>b.addEventListener('click',()=>
 }));
 
 
-const panelIds=['inicio','practicas','casos','flashcards','p03','p04','p05'];
+const panelIds=['inicio','practicas','casos','flashcards','p03','p04','p05','p06'];
 const panelSections=panelIds.map(id=>document.getElementById(id)).filter(Boolean);
 
 function resizeP04Frame(){
   const frame=document.getElementById('p04Frame');
+  if(!frame)return;
+  try{
+    const doc=frame.contentDocument;
+    if(!doc)return;
+    const h=Math.max(doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0,doc.documentElement.offsetHeight,doc.body?doc.body.offsetHeight:0);
+    if(h>1200)frame.style.height=(h+24)+'px';
+  }catch(e){}
+}
+function resizeP06Frame(){
+  const frame=document.getElementById('p06Frame');
   if(!frame)return;
   try{
     const doc=frame.contentDocument;
@@ -672,6 +717,14 @@ function activatePanel(id,subId){
         setTimeout(()=>frame.contentWindow.postMessage({type:'p04-scroll',target:subId},'*'),350);
       }
     }
+    if(id==='p06'){
+      const frame=document.getElementById('p06Frame');
+      resizeP06Frame();
+      if(subId&&frame&&frame.contentWindow){
+        frame.contentWindow.postMessage({type:'p06-scroll',target:subId},'*');
+        setTimeout(()=>frame.contentWindow.postMessage({type:'p06-scroll',target:subId},'*'),350);
+      }
+    }
   },140);
 }
 function resolveTarget(hash){
@@ -679,6 +732,7 @@ function resolveTarget(hash){
   if(hash.startsWith('p03-'))return{panel:'p03',sub:hash};
   if(hash.startsWith('p05-'))return{panel:'p05',sub:hash};
   if(hash.startsWith('p04-'))return{panel:'p04',sub:hash};
+  if(hash.startsWith('p06-'))return{panel:'p06',sub:hash};
   return null;
 }
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
@@ -692,8 +746,17 @@ window.addEventListener('message',function(e){
     const h=Number(e.data.height);if(Number.isFinite(h)&&h>1200)frame.style.height=(h+24)+'px';
   }
 });
+window.addEventListener('message',function(e){
+  const frame=document.getElementById('p06Frame');
+  if(!frame||e.source!==frame.contentWindow)return;
+  if(e.data&&e.data.type==='p06-height'){
+    const h=Number(e.data.height);if(Number.isFinite(h)&&h>1200&&h<100000)frame.style.height=(h+24)+'px';
+  }
+});
 const p04Frame=document.getElementById('p04Frame');
 if(p04Frame)p04Frame.addEventListener('load',()=>{resizeP04Frame();setTimeout(resizeP04Frame,350);setTimeout(resizeP04Frame,1100);});
+const p06Frame=document.getElementById('p06Frame');
+if(p06Frame)p06Frame.addEventListener('load',()=>{resizeP06Frame();setTimeout(resizeP06Frame,350);setTimeout(resizeP06Frame,1100);});
 const initialHash=window.location.hash.replace('#','');
 const initialTarget=resolveTarget(initialHash)||{panel:'inicio',sub:null};
 activatePanel(initialTarget.panel,initialTarget.sub);
@@ -775,7 +838,10 @@ const globalFlashcards=[
 {p:'P04',c:'muestra',q:'¿Para qué se heparinizó la jeringa?',a:'Para reducir el riesgo de coagulación evitando exceso de heparina libre.'},
 {p:'P04',c:'muestra',q:'¿Cuál es el sitio arterial preferente?',a:'Arteria radial.'}
 ];
-const globalLabel=c=>({homeostasis:'Homeostasis',metodos:'Métodos',rinon:'Riñón',cetonas:'Cetonas','acido-base':'Ácido-base',compensacion:'Compensación',muestra:'Muestra arterial',electrolitos:'Electrolitos'})[c]||c;
+if(window.P06_DATA&&Array.isArray(window.P06_DATA.flashcards)){
+  globalFlashcards.push(...window.P06_DATA.flashcards.map(x=>({p:'P06',c:x.categoria,q:x.pregunta,a:x.respuesta})));
+}
+const globalLabel=c=>({homeostasis:'Homeostasis',metodos:'Métodos',rinon:'Riñón',cetonas:'Cetonas','acido-base':'Ácido-base',compensacion:'Compensación',muestra:'Muestra arterial',electrolitos:'Electrolitos',proteinas:'Proteínas',aromaticos:'Aromáticos',azufrados:'Azufrados',hemoglobina:'Hemoglobina',coagulacion:'Coagulación'})[c]||c;
 function renderGlobalFlash(filter='all'){
   const grid=document.getElementById('globalFlashGrid');if(!grid)return;grid.innerHTML='';
   globalFlashcards.filter(x=>filter==='all'||x.p===filter||x.c===filter).forEach(x=>{
