@@ -127,7 +127,7 @@
 .practice-shortcuts{display:flex;gap:14px;flex-wrap:wrap}
 .practice-shortcuts .practice-btn{color:#fff;border:0;box-shadow:0 10px 24px rgba(17,45,97,.14);transition:.2s ease}
 .practice-shortcuts .practice-btn:hover{transform:translateY(-2px)}
-.practice-btn-03{background:#3978C7}.practice-btn-04{background:#1F559D}.practice-btn-06{background:#168E91}
+.practice-btn-03{background:#3978C7}.practice-btn-04{background:#1F559D}.practice-btn-06{background:#168E91}.practice-btn-07{background:#B58B1A}
 .practice-grid .practice-card:nth-child(1){border-top:5px solid #3978C7}
 .practice-grid .practice-card:nth-child(2){border-top:5px solid #1F559D}
 .practice-grid .practice-card:nth-child(3){border-top:5px solid #163B8C}
@@ -137,12 +137,15 @@
 .p04-frame{width:100%;height:1400px;min-height:1400px;border:0;display:block;background:#F5F8FC;overflow:hidden}
 .p06-shell{padding:0;background:#F5F8FC}
 .p06-frame{width:100%;height:1400px;min-height:1400px;border:0;display:block;background:#F5F8FC;overflow:hidden}
+.p07-shell{padding:0;background:#F5F8FC}
+.p07-frame{width:100%;height:1400px;min-height:1400px;border:0;display:block;background:#F5F8FC;overflow:hidden}
 .global-library{padding:76px 0}
 .global-practice-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .global-practice-card{padding:26px;border-radius:24px}
 .global-practice-card.p03-tone{border-top:6px solid #3978C7}
 .global-practice-card.p04-tone{border-top:6px solid #1F559D}
 .global-practice-card.p06-tone{border-top:6px solid #168E91}
+.global-practice-card.p07-tone{border-top:6px solid #D7A62A}
 .global-card-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
 .global-card-head h3{margin:9px 0 0;font-size:1.25rem}
 .global-card-head>strong{color:var(--navy);white-space:nowrap}
@@ -188,7 +191,7 @@
         <p class="lead">Portafolio interactivo de prácticas de laboratorio. Integra fundamento bioquímico, evidencia experimental, resultados, discusión, aplicación clínica y repaso activo.</p>
         <div class="hero-actions practice-shortcuts">
     <a href="#p03" class="btn practice-btn practice-btn-03">Explorar Práctica 03 →</a>
-    <a href="#p04" class="btn practice-btn practice-btn-04">Explorar Práctica 04 →</a><a href="#p05" class="btn btn-primary">Explorar Práctica 05 →</a><a href="#p06" class="btn practice-btn practice-btn-06">Explorar Práctica 06 →</a>
+    <a href="#p04" class="btn practice-btn practice-btn-04">Explorar Práctica 04 →</a><a href="#p05" class="btn btn-primary">Explorar Práctica 05 →</a><a href="#p06" class="btn practice-btn practice-btn-06">Explorar Práctica 06 →</a><a href="#p07" class="btn practice-btn practice-btn-07">Práctica 07 · Enzimas →</a>
   </div>
       </div>
       <aside class="identity-card reveal">
@@ -240,6 +243,12 @@
             <p>Determinación cualitativa de proteínas, hemoglobina, hematocrito y tiempo de protrombina; 10 casos y 15 flashcards.</p>
           </div><a class="btn btn-primary" href="#p06">Abrir práctica</a>
         </article>
+        <article class="card practice-card reveal">
+          <div><div style="display:flex;justify-content:space-between;gap:12px;align-items:start"><span class="tag">UNIDAD I · CIERRE</span><span class="status">Publicada</span></div>
+            <div class="num">P07</div><h3>Enzimas en acción</h3>
+            <p>Catalasa, amilasa, pancreatina, factores de actividad y determinación cinética UV de AST/ALT. Incluye 6 experiencias, 10 casos y 15 flashcards.</p>
+          </div><a class="btn btn-primary" href="#p07">Abrir práctica</a>
+        </article>
       </div>
     </div>
   </section>
@@ -251,6 +260,9 @@
 </section>
 <section class="practice-shell panel-section p06-shell" id="p06" data-panel-title="Práctica 06">
   <iframe id="p06Frame" class="p06-frame" src="p06-preview.html?embed=1&v=20261029-1" title="Práctica 06 · Proteínas que cuentan historias" loading="eager"></iframe>
+</section>
+<section class="practice-shell panel-section p07-shell" id="p07" data-panel-title="Práctica 07">
+  <iframe id="p07Frame" class="p07-frame" src="p07-preview.html?embed=1&v=20261102-1" title="Práctica 07 · Enzimas en acción" loading="eager"></iframe>
 </section>
 <section class="practice-shell panel-section" id="p03" data-panel-title="Práctica 03">
     <div class="container practice-hero">
@@ -615,6 +627,20 @@
         </ol>
         <a class="btn btn-primary" href="#p06-casos">Resolver casos de P06</a>
       </article>
+      <article class="card global-practice-card reveal p07-tone">
+        <div class="global-card-head"><div><span class="tag">P07</span><h3>Enzimología y pruebas bioquímicas</h3></div><strong>10 casos</strong></div>
+        <ol class="case-library-list"><li><span class="case-index">01</span><span>Catalasa y calor</span></li>
+<li><span class="case-index">02</span><span>¿De dónde salen las burbujas?</span></li>
+<li><span class="case-index">03</span><span>Lugol azul intenso</span></li>
+<li><span class="case-index">04</span><span>Cambio verde en Fehling</span></li>
+<li><span class="case-index">05</span><span>Amilasa en medio ácido</span></li>
+<li><span class="case-index">06</span><span>Insuficiencia pancreática</span></li>
+<li><span class="case-index">07</span><span>Coenzima de transaminasas</span></li>
+<li><span class="case-index">08</span><span>AST elevada tras ejercicio</span></li>
+<li><span class="case-index">09</span><span>Patrón hepatocelular</span></li>
+<li><span class="case-index">10</span><span>Ictericia y consumo de alcohol</span></li></ol>
+        <a class="btn btn-primary" href="#p07-casos">Resolver casos de P07</a>
+      </article>
     </div>
   </div>
 </section>
@@ -630,6 +656,7 @@
       <button class="gchip" data-filter="P03">P03</button>
       <button class="gchip" data-filter="P04">P04</button>
       <button class="gchip" data-filter="P06">P06</button>
+      <a class="gchip" href="#p07-flashcards">P07 · 15 nuevas flashcards ↗</a>
       <button class="gchip" data-filter="homeostasis">Homeostasis</button>
       <button class="gchip" data-filter="metodos">Métodos</button>
       <button class="gchip" data-filter="rinon">Riñón</button>
@@ -678,7 +705,7 @@ document.querySelectorAll('.hotspot').forEach(b=>b.addEventListener('click',()=>
 }));
 
 
-const panelIds=['inicio','practicas','casos','flashcards','p03','p04','p05','p06'];
+const panelIds=['inicio','practicas','casos','flashcards','p03','p04','p05','p06','p07'];
 const panelSections=panelIds.map(id=>document.getElementById(id)).filter(Boolean);
 
 function resizeP04Frame(){
@@ -699,6 +726,16 @@ function resizeP06Frame(){
     if(!doc)return;
     const h=Math.max(doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0,doc.documentElement.offsetHeight,doc.body?doc.body.offsetHeight:0);
     if(h>1200)frame.style.height=(h+24)+'px';
+  }catch(e){}
+}
+function resizeP07Frame(){
+  const frame=document.getElementById('p07Frame');
+  if(!frame)return;
+  try{
+    const doc=frame.contentDocument;
+    if(!doc)return;
+    const h=Math.max(doc.documentElement.scrollHeight,doc.body?doc.body.scrollHeight:0,doc.documentElement.offsetHeight,doc.body?doc.body.offsetHeight:0);
+    if(h>1200&&h<100000)frame.style.height=(h+24)+'px';
   }catch(e){}
 }
 function activatePanel(id,subId){
@@ -725,6 +762,14 @@ function activatePanel(id,subId){
         setTimeout(()=>frame.contentWindow.postMessage({type:'p06-scroll',target:subId},'*'),350);
       }
     }
+    if(id==='p07'){
+      const frame=document.getElementById('p07Frame');
+      resizeP07Frame();
+      if(subId&&frame&&frame.contentWindow){
+        frame.contentWindow.postMessage({type:'p07-scroll',target:subId},'*');
+        setTimeout(()=>frame.contentWindow.postMessage({type:'p07-scroll',target:subId},'*'),350);
+      }
+    }
   },140);
 }
 function resolveTarget(hash){
@@ -733,6 +778,7 @@ function resolveTarget(hash){
   if(hash.startsWith('p05-'))return{panel:'p05',sub:hash};
   if(hash.startsWith('p04-'))return{panel:'p04',sub:hash};
   if(hash.startsWith('p06-'))return{panel:'p06',sub:hash};
+  if(hash.startsWith('p07-'))return{panel:'p07',sub:hash};
   return null;
 }
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
@@ -753,10 +799,19 @@ window.addEventListener('message',function(e){
     const h=Number(e.data.height);if(Number.isFinite(h)&&h>1200&&h<100000)frame.style.height=(h+24)+'px';
   }
 });
+window.addEventListener('message',function(e){
+  const frame=document.getElementById('p07Frame');
+  if(!frame||e.source!==frame.contentWindow)return;
+  if(e.data&&e.data.type==='p07-height'){
+    const h=Number(e.data.height);if(Number.isFinite(h)&&h>1200&&h<100000)frame.style.height=(h+24)+'px';
+  }
+});
 const p04Frame=document.getElementById('p04Frame');
 if(p04Frame)p04Frame.addEventListener('load',()=>{resizeP04Frame();setTimeout(resizeP04Frame,350);setTimeout(resizeP04Frame,1100);});
 const p06Frame=document.getElementById('p06Frame');
 if(p06Frame)p06Frame.addEventListener('load',()=>{resizeP06Frame();setTimeout(resizeP06Frame,350);setTimeout(resizeP06Frame,1100);});
+const p07Frame=document.getElementById('p07Frame');
+if(p07Frame)p07Frame.addEventListener('load',()=>{resizeP07Frame();setTimeout(resizeP07Frame,350);setTimeout(resizeP07Frame,1100);});
 const initialHash=window.location.hash.replace('#','');
 const initialTarget=resolveTarget(initialHash)||{panel:'inicio',sub:null};
 activatePanel(initialTarget.panel,initialTarget.sub);

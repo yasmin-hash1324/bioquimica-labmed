@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b2e54">
+<meta name="description" content="Práctica N.° 07 · Enzimas: catalasa, amilasas, AST/TGO y ALT/TGP. Resultados, 6 experiencias, 10 casos clínicos y 15 flashcards de Bioquímica LabMed.">
+<title>Práctica 07 | Enzimas en acción · Bioquímica LabMed</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+:root{--navy:#0b2e54;--deep:#071e35;--blue:#176db5;--cyan:#18b7b2;--yellow:#f4be42;--bg:#f5f8fc;--line:#dce6ee;--ink:#1c3148;--sub:#597188;--white:#fff;--good:#0e8874;--bad:#b74b52;--shadow:0 20px 45px rgba(18,54,82,.09);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;font-family:"DM Sans",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+h1,h2,h3,h4,.number,.display{font-family:Outfit,system-ui,sans-serif;line-height:1.16;letter-spacing:-.025em}
+h1,h2,h3,h4{margin:0 0 12px;color:var(--navy)}
+h1{font-size:clamp(2.7rem,6.3vw,5.4rem);font-weight:900}
+h2{font-size:clamp(2rem,4vw,3.15rem);font-weight:850}
+h3{font-size:1.35rem}
+p{margin:0 0 14px}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.eyebrow,.kicker{font-size:.77rem;font-weight:900;text-transform:uppercase;letter-spacing:.15em}
+.kicker{color:#168f9f;margin-bottom:12px}
+.topbar{background:#071e35;color:#f1faff;border-bottom:1px solid rgba(255,255,255,.12)}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-block:13px}
+.brand{display:flex;align-items:center;gap:11px;font-family:Outfit,sans-serif;font-weight:900;letter-spacing:.01em;font-size:1.15rem}
+.brandmark{width:37px;height:37px;border-radius:12px;background:linear-gradient(135deg,#18b7b2,#2789d7);display:grid;place-items:center;color:white;font-size:1.4rem}
+.topbar a.back{font-size:.85rem;opacity:.9;border:1px solid rgba(255,255,255,.22);padding:7px 12px;border-radius:30px}
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 90% 20%,#126276 0%,transparent 35%),radial-gradient(ellipse at 30% 0%,#123c67 0%,transparent 40%),#0a2543;color:white;padding:72px 0 63px}
+.hero:after{content:"";position:absolute;width:440px;height:440px;border:70px solid rgba(26,190,182,.055);border-radius:50%;right:-120px;top:-140px;pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.48fr) minmax(280px,.8fr);gap:48px;align-items:center}
+.hero h1{color:white;margin-top:15px;margin-bottom:20px}
+.hero h1 .accent{color:#62e1d5}
+.hero .lead{color:#d9e7f0;font-size:1.08rem;max-width:620px}
+.pills{display:flex;flex-wrap:wrap;gap:9px}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);border-radius:40px;font-size:.78rem;font-weight:800}
+.pill.yellow{color:#ffde78;border-color:rgba(255,222,120,.45)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{appearance:none;border:0;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:13px;padding:13px 18px;font-size:.88rem;font-weight:850;transition:.2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(120deg,#18b7b2,#0e898d);color:white;box-shadow:0 10px 24px #001c2c20}
+.btn-yellow{background:var(--yellow);color:#102f4a}
+.btn-light{background:white;color:var(--navy);border:1px solid var(--line)}
+.hero .number{font-size:2.15rem;font-weight:900;color:white}
+.hero-panel{padding:25px;border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.08);border-radius:26px;backdrop-filter:blur(15px)}
+.hero-panel h3{color:white;margin-bottom:12px}
+.hero-panel p{color:#d5e2ed;font-size:.89rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:22px 0}
+.stat{border-radius:13px;background:rgba(255,255,255,.11);padding:13px 8px;text-align:center}
+.stat b{display:block;font:900 1.75rem Outfit;color:#7be1d7}
+.stat small{font-size:.68rem;letter-spacing:.02em;color:#d9eaf3}
+.identity{display:grid;gap:9px;margin-top:18px;font-size:.76rem}
+.identity span{color:#aac7d8}
+.identity strong{display:block;color:white;font-size:.83rem}
+.localnav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);box-shadow:0 8px 23px #15304a0c}
+.localnav .container{display:flex;gap:5px;align-items:center;overflow-x:auto;scrollbar-width:thin}
+.localnav a{padding:15px 12px;color:#536b7f;font-size:.78rem;font-weight:800;white-space:nowrap;border-bottom:3px solid transparent}
+.localnav a:hover,.localnav a.active{border-bottom-color:var(--cyan);color:var(--navy)}
+.section{padding:80px 0;scroll-margin-top:63px}
+.section.alternate{background:#edf4f8}
+.section-head{max-width:800px;margin-bottom:28px}
+.section-head p{color:var(--sub);font-size:1.03rem}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{background:white;border-radius:22px;padding:26px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.card h3{font-size:1.24rem}
+.card p:last-child{margin-bottom:0}
+.card p{color:var(--sub);font-size:.91rem}
+.info-icon{width:43px;height:43px;border-radius:13px;background:#e4f6f6;color:#087d8d;display:grid;place-items:center;font-size:1.55rem;margin-bottom:15px}
+.tip{border-left:4px solid #18b7b2;padding:16px 20px;background:#e7f7f7;border-radius:0 15px 15px 0;color:#20516a;margin-top:20px}
+.tip.yellow{border-color:#dba928;background:#fff8e6}
+.tip.red{border-color:#e09166;background:#fff3ec}
+.overview-stripe{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.overview-stripe>div{background:white;border:1px solid var(--line);padding:19px;border-radius:18px}
+.overview-stripe b{font:900 1.25rem Outfit;color:var(--navy);display:block}
+.overview-stripe small{color:var(--sub);font-weight:700}
+.ec-list{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin-top:17px}
+.ec{background:#fff;border:1px solid #dce6ee;padding:13px 8px;border-radius:14px;text-align:center}
+.ec b{display:block;font:900 1.07rem Outfit;color:#0e7f92}
+.ec span{font-size:.72rem;color:#3d566a;line-height:1.35;display:block;word-break:normal}
+.experiment-menu{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:19px}
+.exp-tab{border-radius:13px;border:1px solid #cfdee9;background:white;color:#28506c;padding:10px 13px;font-size:.83rem;font-weight:800}
+.exp-tab:hover,.exp-tab.active{color:white;background:#0f708f;border-color:#0f708f}
+.experiment-sheet{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.85fr);gap:25px;background:#fff;border:1px solid var(--line);border-radius:25px;padding:30px;box-shadow:var(--shadow)}
+.experiment-sheet h3{font-size:1.7rem;margin:0 0 15px}
+.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:15px 0}
+.field{padding:17px;border:1px solid #dce6ee;background:#f8fbfd;border-radius:15px}
+.field label{display:block;color:#067b94;font-weight:900;font-size:.71rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px}
+.field p{font-size:.88rem;white-space:pre-wrap;margin:0;color:#335469}
+.exp-photos{display:grid;grid-template-columns:1fr 1fr;gap:9px;align-content:start}
+.exp-photos .photo:first-child:last-child{grid-column:1/-1}
+.photo{appearance:none;border:1px solid var(--line);border-radius:17px;padding:0;overflow:hidden;text-align:left;background:white;color:#314e64}
+.photo img{width:100%;height:160px;object-fit:cover;display:block;background:#d7e4ee}
+.photo span{display:block;padding:10px 11px;font-size:.76rem;font-weight:750}
+.photo:hover{box-shadow:0 0 0 3px #9fe1de80}
+.photo:focus-visible{outline-offset:4px}
+.result-feature{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}
+.result-feature .card{height:100%}
+.inline-equation{font:800 clamp(1.0rem,2.6vw,1.5rem) Outfit;color:#075f86;background:#eff9fa;border:1px dashed #a8dcdc;padding:19px;border-radius:16px;margin:16px 0;word-break:break-word}
+.tablewrap{overflow-x:auto;background:white;border:1px solid var(--line);border-radius:19px;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;min-width:665px;font-size:.86rem}
+th,td{padding:15px 13px;text-align:left;border-bottom:1px solid #e6edf3;vertical-align:middle}
+th{background:#12385a;color:#fff;font-size:.77rem;letter-spacing:.03em}
+tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even){background:#f4f9fc}
+td strong{color:#0a6484}
+.footnote{color:#62788a;font-size:.8rem;margin:13px 0}
+.chartbox{background:white;border:1px solid var(--line);border-radius:20px;padding:23px;margin-top:20px}
+.bar-row{display:grid;grid-template-columns:130px 1fr 93px;align-items:center;gap:14px;margin:17px 0}
+.bar-label{font-size:.86rem;font-weight:800}
+.bar-track{height:16px;border-radius:30px;background:#e7f0f5;overflow:hidden}
+.bar-fill{height:100%;border-radius:30px;background:linear-gradient(90deg,#19bdb6,#1883bd)}
+.bar-fill.alt{background:linear-gradient(90deg,#e0aa35,#f2cc66)}
+.bar-num{text-align:right;font:850 .92rem Outfit;color:#0d3a59}
+.mini-calc{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:16px 0}
+.mini-calc label{font-size:.72rem;font-weight:850;color:#597188}
+.mini-calc input{display:block;width:100%;padding:10px;border:1px solid #c8dae5;border-radius:9px;margin-top:5px;background:#f8fcff}
+#calcOut{padding:14px;background:#eaf8f7;border-radius:12px;color:#0c6179;font-weight:800}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.gallery .photo img{height:175px}
+.gallery .photo span{min-height:49px}
+.quiz-shell{display:grid;grid-template-columns:260px 1fr;gap:18px}
+.quiz-sidebar{background:#092e50;border-radius:23px;padding:22px;color:#fff;align-self:start}
+.quiz-sidebar h3{color:white}
+.quiz-sidebar p{color:#c1d8e5;font-size:.85rem}
+.progress-track{height:9px;background:#2d536d;border-radius:10px;overflow:hidden;margin:12px 0}
+.progress-track span{display:block;width:0;height:100%;background:var(--cyan);border-radius:10px;transition:width .25s}
+.quiz-dots{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:21px}
+.quiz-dot{width:100%;aspect-ratio:1;border:1px solid #63889d;color:white;border-radius:10px;background:#1f516e;font-weight:900;font-size:.81rem}
+.quiz-dot.selected{background:#efba3a;color:#193b55;border-color:#efba3a}
+.quiz-dot.answered:not(.selected){background:#168d82}
+.quiz-card{padding:31px}
+.case-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:13px}
+.microtag{display:inline-block;background:#e6f4fa;color:#086b85;font-size:.7rem;font-weight:900;padding:5px 9px;border-radius:20px}
+.case-vignette{padding:20px;background:#f4f8fc;border-left:4px solid #19aab1;border-radius:0 15px 15px 0;margin:14px 0 22px;color:#365368}
+.options{display:grid;gap:9px}
+.option{display:flex;gap:12px;align-items:flex-start;text-align:left;border:1px solid #d5e2eb;padding:13px 16px;border-radius:13px;background:#fff;color:#294b63;width:100%}
+.option b{width:27px;height:27px;flex:none;border-radius:50%;display:grid;place-items:center;background:#e7f0f5;color:#0f5982;font-size:.78rem}
+.option:hover:not(:disabled){border-color:#23aaa9;background:#f0fbfb}
+.option.correct{border-color:#0ba28a;background:#eaf9f4}
+.option.correct b{background:#0b997f;color:white}
+.option.wrong{border-color:#d17373;background:#fff0ee}
+.option.wrong b{background:#bf5454;color:white}
+.option:disabled{cursor:default}
+.explanation{margin-top:17px;padding:18px;border-radius:14px;background:#edf8f8;border:1px solid #bce5df;display:none}
+.explanation.show{display:block}
+.explanation.error{background:#fff5ee;border-color:#f1c7aa}
+.explanation p{font-size:.88rem;color:#36556a;margin-bottom:8px}
+.explanation p:last-child{margin-bottom:0}
+.quiz-footer{display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;margin-top:20px}
+.btn.small{padding:10px 13px;font-size:.8rem}
+.flash-layout{display:grid;grid-template-columns:1fr 285px;gap:20px}
+.flash-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.flash-filter{border-radius:30px;border:1px solid #cddfe6;background:white;color:#46677c;padding:9px 14px;font-size:.81rem;font-weight:850}
+.flash-filter.active{background:#104b76;color:white;border-color:#104b76}
+.flashcard{border:0;cursor:pointer;min-height:270px;border-radius:24px;background:linear-gradient(145deg,#0f466c,#0c294b);color:white;padding:32px;text-align:left;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;position:relative;width:100%;box-shadow:var(--shadow)}
+.flashcard.flipped{background:linear-gradient(135deg,#006f77,#0b5476)}
+.flashcard .face-label{font-size:.71rem;text-transform:uppercase;letter-spacing:.16em;font-weight:900;color:#8fe9dd;margin-bottom:20px}
+.flashcard .flash-text{font:750 clamp(1.1rem,2.5vw,1.55rem)/1.42 Outfit;white-space:pre-line}
+.flashcard .turn-hint{font-size:.77rem;opacity:.75;position:absolute;bottom:20px;right:22px}
+.flash-footer{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.flash-footer .btn{font-size:.8rem;padding:10px 14px}
+.flash-stats{background:#fff;border-radius:20px;padding:24px;border:1px solid var(--line);box-shadow:var(--shadow);align-self:start}
+.flash-stats h3{font-size:1.2rem}
+.flash-stats .count{font:900 2.2rem Outfit;color:#117f8c;margin:9px 0}
+.flash-stats p,.flash-stats li{color:var(--sub);font-size:.85rem}
+.flash-source{border-top:1px solid var(--line);padding-top:15px;margin-top:19px;overflow-wrap:anywhere}
+.booklist{margin:0;padding-left:22px}
+.booklist li{margin-bottom:13px;color:#38536a}
+.booklist a{text-decoration:underline;text-underline-offset:3px;color:#087c96}
+.cta-final{background:#0b2e54;color:#e8f5fa;padding:45px 0}
+.cta-final h2{color:white}
+.cta-final p{color:#c7deec}
+.footer{background:#061b30;color:#a9c2d2;padding:22px 0;font-size:.79rem}
+.footer .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(3,15,29,.94);display:none;align-items:center;justify-content:center;padding:25px}
+.lightbox.open{display:flex}
+.lightbox figure{width:min(95vw,1000px);margin:0;text-align:center}
+.lightbox img{max-width:100%;max-height:80vh;object-fit:contain;border-radius:13px}
+.lightbox figcaption{color:#d7eaf4;font-size:.82rem;padding-top:10px}
+.lightbox-close{position:absolute;top:17px;right:25px;color:white;background:none;border:0;font-size:2.1rem}
+.notice{font-size:.83rem;color:#587389;margin-top:14px}
+@media(max-width:900px){.hero-grid,.experiment-sheet,.quiz-shell,.flash-layout{grid-template-columns:1fr}.g4,.gallery{grid-template-columns:repeat(3,1fr)}.ec-list{grid-template-columns:repeat(4,1fr)}.hero-panel{max-width:670px}.result-feature{grid-template-columns:1fr}}
+@media(max-width:600px){.container{width:min(100% - 28px,1180px)}.hero{padding:50px 0}.section{padding:54px 0}.g2,.g3,.g4,.gallery{grid-template-columns:1fr 1fr}.overview-stripe{grid-template-columns:1fr 1fr}.method-grid{grid-template-columns:1fr}.ec-list{grid-template-columns:repeat(2,1fr)}.card,.experiment-sheet,.quiz-card{padding:20px}.photo img,.gallery .photo img{height:130px}.bar-row{grid-template-columns:86px 1fr 76px;gap:8px}.bar-label{font-size:.74rem}.mini-calc{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(3,1fr)}.hero-panel{padding:18px}}
+@media(max-width:380px){.gallery{grid-template-columns:1fr}.exp-photos{grid-template-columns:1fr}.photo img,.gallery .photo img{height:170px}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="container"><a class="brand" href="index.html#inicio" aria-label="Volver a Bioquímica LabMed"><span class="brandmark">⚗</span><span>Bioquímica LabMed</span></a><a class="back" href="index.html#practicas">← Portafolio de prácticas</a></div></header>
+<main>
+<section class="hero" id="p07-resumen"><div class="container hero-grid">
+ <div><div class="pills"><span class="pill">PRÁCTICA N.° 07</span><span class="pill">UNIDAD I</span><span class="pill yellow">Cierre de la primera unidad</span></div>
+ <h1>Enzimas<br><span class="accent">en acción.</span></h1>
+ <p class="lead">De una burbuja de oxígeno a la lectura espectrofotométrica: descubre cómo funcionan las enzimas, por qué cambian con el medio y qué revelan las transaminasas.</p>
+ <div class="actions"><a class="btn btn-yellow" href="#p07-experimentos">Explorar las 6 experiencias →</a><a class="btn btn-primary" href="#p07-resultados">Ver AST y ALT</a></div>
+ </div>
+ <aside class="hero-panel"><div class="eyebrow" style="color:#8fece2">CUADERNO DIGITAL · PRÁCTICA 07</div><div class="stats"><div class="stat"><b>06</b><small>Experimentos</small></div><div class="stat"><b>10</b><small>Casos clínicos</small></div><div class="stat"><b>15</b><small>Flashcards</small></div></div><p>Un recorrido desde la demostración experimental hasta la interpretación bioquímica, con evidencias fotográficas de la sesión.</p><div class="identity"><div><span>Estudiante</span><strong>Vallery Y. Cuayla Platero · Grupo A</strong></div><div><span>Docente</span><strong>M.C. Clinthon Oliver Ugarte Espinoza</strong></div><div><span>Jefa de práctica</span><strong>Lic. Judith Melania Coaquira Quispe</strong></div><div><span>Institución</span><strong>Universidad Nacional de Moquegua · Medicina Humana</strong></div></div></aside>
+</div></section>
+<nav class="localnav" aria-label="Navegación de práctica"><div class="container"><a href="#p07-resumen">Inicio</a><a href="#p07-fundamentos">Fundamento</a><a href="#p07-experimentos">Experimentos</a><a href="#p07-resultados">Resultados</a><a href="#p07-evidencia">Evidencias</a><a href="#p07-casos">Casos clínicos</a><a href="#p07-flashcards">Flashcards</a><a href="#p07-bibliografia">Bibliografía</a></div></nav>
+<section class="section" id="p07-fundamentos"><div class="container">
+ <div class="section-head"><div class="kicker">01 · Fundamentos</div><h2>Catalizadores de la vida</h2><p>Las enzimas aceleran reacciones específicas al disminuir la energía de activación. Su actividad depende del sustrato, la temperatura, el pH y, en algunos casos, cofactores e inhibidores.</p></div>
+ <div class="grid g3"><article class="card"><div class="info-icon">⚡</div><h3>Energía de activación</h3><p>La enzima estabiliza el estado de transición. No cambia la energía libre global (ΔG) ni la posición del equilibrio químico.</p></article><article class="card"><div class="info-icon">🧬</div><h3>Especificidad y estructura</h3><p>El sitio activo reconoce sustratos y facilita la catálisis. Un cambio conformacional importante puede reducir o abolir su actividad.</p></article><article class="card"><div class="info-icon">🌡</div><h3>Entorno de reacción</h3><p>La temperatura y el pH modifican las interacciones del sitio activo. Los valores óptimos son particulares de cada enzima.</p></article></div>
+ <div class="tip yellow"><strong>Clasificación EC actualizada:</strong> existen <strong>siete clases</strong> reconocidas por la IUBMB, incluida la clase 7 (translocasas). Algunos materiales antiguos presentan seis.</div>
+ <div class="ec-list"><div class="ec"><b>EC 1</b><span>Oxidorreductasas</span></div><div class="ec"><b>EC 2</b><span>Transferasas</span></div><div class="ec"><b>EC 3</b><span>Hidrolasas</span></div><div class="ec"><b>EC 4</b><span>Liasas</span></div><div class="ec"><b>EC 5</b><span>Isomerasas</span></div><div class="ec"><b>EC 6</b><span>Ligasas</span></div><div class="ec"><b>EC 7</b><span>Translocasas</span></div></div>
+ <div class="overview-stripe"><div><b>Catalasa</b><small>2 H₂O₂ → 2 H₂O + O₂</small></div><div><b>Amilasa</b><small>Hidrólisis del almidón</small></div><div><b>AST / ALT</b><small>Transferencia de grupos amino</small></div><div><b>340 nm</b><small>Seguimiento de NADH en UV</small></div></div>
+ <div class="tip">Una coloración o una burbuja demuestran fenómenos observables. La interpretación del mecanismo debe apoyarse además en controles, condiciones de reacción y especificidad del método.</div>
+</div></section>
+<section class="section alternate" id="p07-experimentos"><div class="container">
+ <div class="section-head"><div class="kicker">02 · Desarrollo experimental</div><h2>Seis experiencias, una misma lógica</h2><p>Selecciona una experiencia para revisar el fundamento, lo realizado, la evidencia visual y la lectura crítica de los hallazgos.</p></div>
+ <div class="experiment-menu" role="tablist" aria-label="Experimentos de la práctica" id="expTabs"></div>
+ <div class="experiment-sheet" id="expPanel" aria-live="polite"><p>Cargando experiencias…</p></div>
+ <div class="tip yellow"><strong>Nota de registro:</strong> donde las fotografías o apuntes no permiten establecer con certeza un color, tubo o intensidad, diferenciamos la observación disponible del resultado teórico esperado; no se inventan cifras ni se atribuye identidad a las muestras.</div>
+</div></section>
+<section class="section" id="p07-resultados"><div class="container">
+ <div class="section-head"><div class="kicker">03 · Resultados cuantitativos</div><h2>De la absorbancia a las U/L</h2><p>AST/TGO y ALT/TGP se calcularon con la disminución de absorbancia de NADH a 340 nm. Se identifican las muestras como A y B para preservar su anonimato.</p></div>
+ <div class="result-feature"><article class="card"><h3>Fundamento del método cinético UV</h3><p>Las reacciones acopladas utilizan NADH, cuya absorbancia a 340 nm disminuye al oxidarse a NAD⁺. La magnitud de la pendiente por minuto se relaciona con la actividad enzimática.</p><div class="inline-equation">Actividad (U/L) = |ΔA/min| × 1746</div><p><strong>Factor del procedimiento:</strong> 1746 (escrito «1.746» en la guía, con separador de millares). Se promedian las tres diferencias consecutivas de absorbancia.</p></article><article class="card"><h3>¿Cómo interpretar los números?</h3><p>La actividad enzimática calculada es un resultado analítico. Para interpretar un resultado clínico se requieren el intervalo de referencia del laboratorio, condiciones preanalíticas y contexto del paciente.</p><div class="tip yellow" style="margin-top:10px">Las lecturas instrumentales fueron negativas por el ajuste respecto al blanco. El cálculo usa <strong>el valor absoluto de la pendiente</strong>; una absorbancia negativa no equivale a una actividad enzimática negativa.</div></article></div>
+ <h3 style="margin:33px 0 15px">Lecturas registradas y resultados</h3>
+ <div class="tablewrap"><table><thead><tr><th>Ensayo</th><th>Muestra</th><th>A₀</th><th>A₁</th><th>A₂</th><th>A₃</th><th>|ΔA/min|</th><th>Actividad</th></tr></thead><tbody id="resultsBody"><tr><td>AST</td><td>A</td><td>−0,164</td><td>−0,175</td><td>−0,180</td><td>−0,185</td><td>0,0070</td><td><strong>12,22 U/L</strong></td></tr><tr><td>AST</td><td>B</td><td>−0,098</td><td>−0,109</td><td>−0,117</td><td>−0,125</td><td>0,0090</td><td><strong>15,71 U/L</strong></td></tr><tr><td>ALT</td><td>A</td><td>−0,160</td><td>−0,165</td><td>−0,169</td><td>−0,173</td><td>0,0043</td><td><strong>7,57 U/L</strong></td></tr><tr><td>ALT</td><td>B</td><td>−0,037</td><td>−0,053</td><td>−0,067</td><td>−0,071</td><td>0,0113</td><td><strong>19,79 U/L</strong></td></tr></tbody></table></div>
+ <p class="footnote">El intervalo entre lecturas sucesivas se considera de 1 minuto, conforme al procedimiento de la práctica. Redondeo de actividades a dos decimales. La última lectura de ALT-B se corrigió a −0,071.</p>
+ <div class="chartbox"><h3>Comparación de actividad en las muestras analizadas</h3><p class="footnote">Escala visual común de 0 a 25 U/L, solo para comparar los cuatro resultados registrados; no representa rangos de normalidad.</p><div class="bar-row"><div class="bar-label">AST · A</div><div class="bar-track"><div class="bar-fill" style="width:48.88%"></div></div><div class="bar-num">12,22</div></div><div class="bar-row"><div class="bar-label">AST · B</div><div class="bar-track"><div class="bar-fill" style="width:62.84%"></div></div><div class="bar-num">15,71</div></div><div class="bar-row"><div class="bar-label">ALT · A</div><div class="bar-track"><div class="bar-fill alt" style="width:30.28%"></div></div><div class="bar-num">7,57</div></div><div class="bar-row"><div class="bar-label">ALT · B</div><div class="bar-track"><div class="bar-fill alt" style="width:79.16%"></div></div><div class="bar-num">19,79</div></div></div>
+ <div class="card" style="margin-top:18px"><h3>Calculadora de actividad enzimática</h3><p>Ingresa tus cuatro absorbancias consecutivas (separadas por 1 minuto). Se utiliza el factor 1746 de esta práctica.</p><div class="mini-calc"><label>Lectura A₀<input id="ca0" type="text" inputmode="decimal" value="-0,037" aria-label="Primera absorbancia"></label><label>Lectura A₁<input id="ca1" type="text" inputmode="decimal" value="-0,053" aria-label="Segunda absorbancia"></label><label>Lectura A₂<input id="ca2" type="text" inputmode="decimal" value="-0,067" aria-label="Tercera absorbancia"></label><label>Lectura A₃<input id="ca3" type="text" inputmode="decimal" value="-0,071" aria-label="Cuarta absorbancia"></label></div><button class="btn btn-primary small" type="button" id="calcBtn">Calcular actividad</button><div id="calcOut" role="status" style="margin-top:12px">ALT · B → 19,79 U/L</div></div>
+ <div class="tip red">Estos datos corresponden a un ejercicio de laboratorio. Por sí solos no confirman ni descartan enfermedad hepática o muscular; AST está presente en varios tejidos y ALT tiene mayor asociación con el hígado, aunque tampoco es diagnóstica aisladamente.</div>
+</div></section>
+<section class="section alternate" id="p07-evidencia"><div class="container"><div class="section-head"><div class="kicker">04 · Registro visual</div><h2>Galería del laboratorio</h2><p>Fotografías reales facilitadas para esta práctica. Toca una imagen para ampliar la evidencia. Se priorizan vistas de materiales, cambios experimentales e instrumentos.</p></div><div class="gallery" id="gallery"></div><p class="notice">Las descripciones identifican únicamente lo visible o el contexto general de trabajo; no representan mediciones instrumentales por sí mismas.</p></div></section>
+<section class="section" id="p07-casos"><div class="container"><div class="section-head"><div class="kicker">05 · Aplicación clínica</div><h2>10 casos para pensar como clínico</h2><p>Casos de elaboración original basados en los principios de la práctica. Resuelve cada pregunta, revisa la explicación de las alternativas y comprueba tu progreso.</p></div>
+<div class="quiz-shell"><aside class="quiz-sidebar"><h3>Tu recorrido</h3><p id="quizStatus">Caso 1 de 10 · 0 resueltos</p><div class="progress-track"><span id="quizProgress"></span></div><div id="quizScore" style="font:900 1.7rem Outfit;color:#8be5da;margin-top:15px">0 / 10</div><p>Respuestas correctas</p><div class="quiz-dots" id="quizDots"></div><button class="btn btn-light small" id="quizReset" type="button" style="margin-top:23px;width:100%">↻ Reiniciar evaluación</button></aside><article class="card quiz-card" id="quizCard" aria-live="polite"><h3>Cargando casos…</h3></article></div>
+</div></section>
+<section class="section alternate" id="p07-flashcards"><div class="container"><div class="section-head"><div class="kicker">06 · Memoria activa</div><h2>15 flashcards seleccionadas</h2><p>Tarjetas depuradas de los mazos Anki compartidos: máximo 15, con equilibrio temático, respuesta revisada y trazabilidad al mazo y al identificador original.</p></div>
+<div class="flash-filters" id="flashFilters"></div><div class="flash-layout"><div><button class="flashcard" id="flashCard" type="button" aria-label="Voltear flashcard"><span class="face-label" id="faceLabel">PREGUNTA</span><span class="flash-text" id="flashText">Cargando tarjeta…</span><span class="turn-hint">Toca para ver la respuesta ↻</span></button><div class="flash-footer"><button class="btn btn-light" type="button" id="flashPrev">← Anterior</button><button class="btn btn-primary" type="button" id="flashFlip">Voltear</button><button class="btn btn-light" type="button" id="flashNext">Siguiente →</button><button class="btn btn-light" type="button" id="flashReview">Revisar de nuevo</button><button class="btn btn-yellow" type="button" id="flashMaster">✓ Dominada</button></div></div><aside class="flash-stats"><h3>Panel de repaso</h3><div id="flashCounter" class="count">1 / 15</div><p id="flashCategory">Fundamentos</p><div class="progress-track" style="background:#e7eef2"><span id="flashProgress"></span></div><p id="flashMasterText">0 tarjetas dominadas</p><div class="flash-source"><strong style="font-size:.79rem;color:#1f475e">PROCEDENCIA ANKI</strong><p id="flashSource" style="margin-top:9px">Cargando…</p><button class="btn btn-light small" type="button" id="flashReset">↻ Reiniciar progreso</button></div></aside></div>
+<div class="tip yellow">Las explicaciones de las tarjetas se revisaron para evitar errores conceptuales y términos desactualizados. La fuente Anki indica procedencia del material; no sustituye la validación bibliográfica.</div>
+</div></section>
+<section class="section" id="p07-bibliografia"><div class="container"><div class="section-head"><div class="kicker">07 · Fuentes y créditos</div><h2>Bibliografía y materiales</h2><p>Fuentes didácticas de la práctica, bibliografía de referencia y recursos oficiales para comprobar conceptos de enzimología y transaminasas.</p></div>
+<div class="grid g2"><article class="card"><h3>Material del curso</h3><ol class="booklist"><li>Universidad Nacional de Moquegua. <em>Práctica N.° 07: Enzimas</em>. Guía de laboratorio facilitada para la sesión.</li><li>Material docente. <em>Práctica 7 de Bioquímica</em>. Diapositivas proporcionadas para el desarrollo del tema.</li><li>Banco de repaso de Anki compartido por el grupo: <em>bioquimica_general(1)</em>, <em>BIOQUIMICA(1)</em> y <em>BIOQUIMICA_TOTAL(1)</em>; selección y depuración de 15 tarjetas.</li></ol></article>
+<article class="card"><h3>Bibliografía y consulta</h3><ol class="booklist"><li>Murray RK y colaboradores. <em>Harper. Bioquímica ilustrada</em>. 31.ª y 32.ª ediciones.</li><li>Nelson DL, Cox MM. <em>Principios de bioquímica de Lehninger</em>. 7.ª edición.</li><li>Baynes JW, Dominiczak MH. <em>Bioquímica médica</em>. 5.ª edición.</li><li><a href="https://iubmb.qmul.ac.uk/enzyme/" target="_blank" rel="noopener noreferrer">IUBMB. Enzyme Nomenclature — clasificación EC vigente.</a></li><li><a href="https://medlineplus.gov/lab-tests/ast-test/" target="_blank" rel="noopener noreferrer">MedlinePlus. AST Test.</a> <a href="https://medlineplus.gov/lab-tests/alt-blood-test/" target="_blank" rel="noopener noreferrer">ALT Blood Test.</a></li></ol></article></div>
+<div class="tip">Las fotografías son evidencia del laboratorio. Los casos clínicos fueron redactados para el estudio de esta práctica y no se presentan como casos extraídos de plataformas comerciales.</div>
+</div></section>
+<section class="cta-final"><div class="container"><div class="kicker" style="color:#8aece3">Final de la primera unidad</div><h2>Del experimento a la interpretación.</h2><p>Las enzimas conectan la química con la clínica. Revisa tus casos, consolida las flashcards y compara los resultados con el fundamento del método.</p><div class="actions"><a class="btn btn-yellow" href="#p07-casos">Volver a los casos ↑</a><a class="btn btn-light" href="index.html#practicas">Portafolio completo</a></div></div></section>
+</main><footer class="footer"><div class="container"><span>Bioquímica LabMed · Medicina Humana · Universidad Nacional de Moquegua</span><span>Práctica 07 · Primera unidad · Material académico</span></div></footer>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografía ampliada"><button type="button" class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">×</button><figure><img id="lightboxImg" alt=""><figcaption id="lightboxCaption"></figcaption></figure></div>
+<script id="p07Data" type="application/json">{"experiments":[{"id":1,"name":"Acción enzimática de la catalasa","tag":"Oxidación-reducción","principle":"La catalasa acelera la descomposición del peróxido de hidrógeno: 2 H₂O₂ → 2 H₂O + O₂. El oxígeno desprendido origina burbujas visibles.","method":"Se colocó una muestra de papa o sangre diluida en un tubo y se añadió peróxido de hidrógeno; la guía propone observar después de un minuto.","observed":"Las fotografías documentan abundante espuma y burbujeo en preparaciones, evidencia visual compatible con liberación gaseosa. No se registró un volumen de O₂ ni una tasa cuantitativa.","expected":"En presencia de catalasa activa se espera desprendimiento de O₂; sin enzima activa, la respuesta disminuye notablemente.","interpretation":"La efervescencia constituye una evidencia cualitativa de actividad catalítica. La intensidad aparente de espuma no puede tratarse como velocidad enzimática sin controlar masa, concentración y tiempo.","photos":[["assets/p07-catalasa-espuma.webp","Formación visible de espuma"],["assets/p07-burbujas-tubos.webp","Burbujeo observado en tubos"]]},{"id":2,"name":"Efecto de la temperatura sobre la catalasa","tag":"Desnaturalización","principle":"El calentamiento intenso altera la conformación proteica y disminuye o elimina la actividad de catalasa; el enfriamiento puede ralentizar la reacción sin desnaturalizarla.","method":"La guía propone hervir por separado trozos de papa y sangre diluida, añadir H₂O₂ y observar durante dos minutos.","observed":"Hay imágenes del montaje térmico y de las preparaciones. No existe una comparación fotográfica inequívoca, con grupos identificados y cantidades medidas, entre muestras hervidas y controles.","expected":"Se prevé menor liberación de gas en material hervido que en material fresco sometido al mismo sustrato.","interpretation":"La comparación solo se puede concluir como demostrada si ambos grupos se identifican y se documentan bajo idénticas condiciones. Se presenta aquí la expectativa bioquímica, no un resultado inventado.","photos":[["assets/p07-papa.webp","Material vegetal utilizado"],["assets/p07-bano37.webp","Control de temperatura del laboratorio"]]},{"id":3,"name":"Actividad de la amilasa salival","tag":"Hidrólisis del almidón","principle":"La α-amilasa rompe enlaces glucosídicos α(1→4) del almidón y genera principalmente maltosa, maltotriosa y dextrinas. El Lugol evalúa almidón residual; Benedict detecta azúcares reductores bajo sus condiciones de ensayo.","method":"Se incubaron preparados con almidón y saliva a aproximadamente 37 °C; luego se analizaron alícuotas con Lugol y Benedict según la guía.","observed":"Las imágenes muestran tubos rotulados con almidón, preparados amarillo-turbios y pruebas cromáticas azuladas/verdosas. Sin una planilla que identifique cada tubo, no es posible asignar con certeza cada color a un control.","expected":"Lugol azul oscuro cuando persiste almidón; coloración reducida o ausente al hidrolizarse. Benedict puede transitar del azul a verde/amarillo/naranja/ladrillo si hay azúcares reductores, según concentración y condiciones.","interpretation":"La combinación de dos ensayos separa la presencia de sustrato residual de la formación de productos reductores. La guía describe dos tubos tratados con amilasa, por lo que el control negativo necesita rotulación adicional para inferir comparaciones.","photos":[["assets/p07-amilasa-tubos.webp","Preparaciones de almidón"],["assets/p07-azul-tubos.webp","Prueba de coloración en tubos"]]},{"id":4,"name":"Digestión del almidón por pancreatina","tag":"Enzimas digestivas","principle":"La pancreatina aporta enzimas pancreáticas, entre ellas α-amilasa. La incubación con almidón permite evaluar su hidrólisis mediante Lugol y Fehling.","method":"La guía indica combinar almidón, pancreatina y bilis o NaOH al 10 %; incubar a 37 °C durante 15 minutos y aplicar pruebas de Lugol y Fehling en porciones separadas.","observed":"Las fotografías muestran calentamiento de tubos y variación de azul hacia verde en soluciones rotuladas con almidón, pero la atribución exacta de cada tubo a pancreatina no quedó documentada.","expected":"El Lugol debería perder la señal intensa de almidón si hubo hidrólisis suficiente; Fehling positivo puede formar precipitado anaranjado o rojo ladrillo con azúcares reductores.","interpretation":"La enzima no produce únicamente glucosa libre: la hidrólisis del almidón origina una mezcla de azúcares y oligosacáridos. El resultado definitivo exige identificar el tubo específico y su control.","photos":[["assets/p07-benedict-color.webp","Cambio cromático observado"],["assets/p07-catalasa-color.webp","Preparaciones en diferentes tonos"]]},{"id":5,"name":"Sensibilidad de la amilasa al pH","tag":"pH y sitio activo","principle":"El pH modifica la protonación de residuos del sitio activo y puede alterar la afinidad por sustrato, la catálisis y la estabilidad de la enzima.","method":"La guía añade HCl a una mezcla de almidón y saliva y luego Lugol; el tratamiento ácido se compara conceptualmente con condiciones compatibles con la actividad salival.","observed":"Se documentaron etapas de incubación y tubos con cambios de color; no se dispone de mediciones individuales de pH ni de una serie cuantificada de actividad.","expected":"La amilasa salival funciona mejor cerca de la neutralidad que en medio fuertemente ácido. Persistencia del azul con Lugol sería compatible con almidón no hidrolizado.","interpretation":"La actividad óptima depende de cada enzima; no todas tienen pH óptimo 7. No debe confundirse un cambio de color de un ensayo redox con el resultado de Lugol.","photos":[["assets/p07-incubacion.webp","Tubos sometidos a incubación"],["assets/p07-bano37.webp","Baño de agua a 37 °C"]]},{"id":6,"name":"Determinación de AST/TGO y ALT/TGP","tag":"Enzimología clínica","principle":"En los ensayos UV acoplados, la disminución de NADH se sigue a 340 nm. La actividad en U/L se obtiene con la magnitud de ΔA/min multiplicada por el factor del procedimiento (1746 para este montaje).","method":"Se preparó el reactivo único mezclando cuatro partes de reactivo A y una de B; se realizaron lecturas secuenciales con el espectrofotómetro GENESYS 150.","observed":"Se recuperaron cuatro series de absorbancias manuscritas. Tras confirmar la última lectura de ALT en la segunda muestra como −0,071, los resultados calculados fueron AST 12,22 y 15,71 U/L; ALT 7,57 y 19,79 U/L.","expected":"Los valores deben compararse con el intervalo de referencia de la técnica y interpretarse junto con síntomas, antecedentes y otras pruebas; no son diagnósticos aislados.","interpretation":"La corrección matemática mantiene la trazabilidad de cada minuto de lectura. Las muestras se muestran anónimas para no exponer datos clínicos personales.","photos":[["assets/p07-micropipeta.webp","Pipeteo para el ensayo UV"],["assets/p07-espectrofotometro.webp","Equipo GENESYS 150"],["assets/p07-cubeta.webp","Preparación de cubeta"]]}],"cases":[{"id":"C01","title":"Catalasa y calor","focus":"Desnaturalización","v":"En la práctica, una papa fresca produce abundantes burbujas al añadir H₂O₂. Un fragmento de la misma papa, previamente hervido, casi no forma espuma.","q":"¿Cuál es la explicación bioquímica más probable?","opts":["Se agotó el oxígeno presente en la papa","La catalasa perdió su conformación funcional por calentamiento","El peróxido se convirtió espontáneamente en glucosa","La papa hervida sintetizó un inhibidor competitivo específico"],"correct":1,"why":["La espuma procede del O₂ producido por la reacción, no de un depósito fijo de oxígeno.","Correcto. La pérdida de estructura proteica puede inactivar el sitio catalítico.","H₂O₂ se transforma en agua y oxígeno, no en glucosa.","No hay datos de síntesis de un inhibidor; el cambio térmico es la causa directa esperable."],"key":"La temperatura extrema puede reducir la actividad por desnaturalización."},{"id":"C02","title":"¿De dónde salen las burbujas?","focus":"Catalasa","v":"Una muestra con actividad de catalasa libera burbujas inmediatamente después de recibir peróxido de hidrógeno.","q":"¿Qué gas explica mejor la observación?","opts":["Dióxido de carbono","Nitrógeno","Oxígeno molecular","Hidrógeno molecular"],"correct":2,"why":["La reacción de catalasa no produce CO₂.","El N₂ no es producto de esa transformación.","Correcto: 2 H₂O₂ → 2 H₂O + O₂.","No se genera H₂ como producto de esta reacción."],"key":"Relaciona el resultado visible con la ecuación química."},{"id":"C03","title":"Lugol azul intenso","focus":"Amilasa","v":"Dos tubos recibieron almidón. En uno actuó saliva activa; en el otro, saliva previamente inactivada. Tras incubación, el segundo adquiere color azul oscuro con Lugol.","q":"¿Qué indica el azul oscuro?","opts":["Presencia de almidón residual","Producción abundante de lactato","Oxidación del NADH","Ausencia completa de proteínas"],"correct":0,"why":["Correcto. El complejo yodo-polisacárido revela persistencia de almidón.","Lugol no mide lactato.","La variación de NADH se mide en otro sistema, usualmente a 340 nm.","Lugol no es una prueba general de proteínas."],"key":"Lugol positivo evidencia sustrato no hidrolizado."},{"id":"C04","title":"Cambio verde en Fehling","focus":"Azúcares reductores","v":"Tras incubar almidón con una preparación enzimática, una prueba basada en reducción de cobre pasa de azul a verde, sin un precipitado rojo ladrillo evidente.","q":"¿Cuál es la interpretación más prudente?","opts":["Se ha cuantificado la glucosa plasmática exacta","Es compatible con una reacción reductora parcial, sin cuantificación","Demuestra ausencia total de azúcares reductores","Prueba específicamente la presencia de sacarosa intacta"],"correct":1,"why":["El color por sí solo no proporciona una concentración exacta.","Correcto. Debe interpretarse cualitativamente y bajo las condiciones del ensayo.","El cambio de color sugiere que no se mantuvo por completo la reacción negativa azul.","La sacarosa intacta no es un azúcar reductor en estas condiciones."],"key":"El color no equivale a una medición cuantitativa."},{"id":"C05","title":"Amilasa en medio ácido","focus":"Efecto del pH","v":"Se incuban saliva y almidón en un medio marcadamente ácido. La muestra mantiene reacción intensa con Lugol.","q":"¿Qué mecanismo explica mejor la reducción de la hidrólisis?","opts":["Aumento universal de la afinidad por el sustrato","Alteración de la protonación de residuos del sitio activo","Transformación de la amilasa en catalasa","Aparición espontánea de glucosa por el HCl"],"correct":1,"why":["La acidez no aumenta universalmente la eficiencia; depende de cada enzima.","Correcto. El estado de ionización y la estructura del sitio activo condicionan la catálisis.","Una enzima no cambia su identidad química de ese modo.","El ácido no genera glucosa suficiente para demostrar hidrólisis enzimática."],"key":"El pH óptimo es específico de cada enzima."},{"id":"C06","title":"Insuficiencia pancreática","focus":"Pancreatina","v":"Una persona con pancreatitis crónica presenta esteatorrea, pérdida de peso y elastasa fecal muy baja. Se sospecha insuficiencia pancreática exocrina.","q":"¿Qué concepto vincula este cuadro con la práctica de pancreatina?","opts":["Reducción de la llegada de enzimas digestivas al intestino","Exceso de catalasa en eritrocitos","Defecto exclusivo de la secreción de insulina","Aumento de la reabsorción renal de almidón"],"correct":0,"why":["Correcto. La insuficiencia exocrina compromete la digestión por déficit de enzimas pancreáticas; la esteatorrea refleja especialmente déficit lipolítico.","La catalasa sanguínea no causa el cuadro de mala digestión.","La función endocrina puede coexistir, pero no explica por sí sola la esteatorrea.","El almidón no se reabsorbe intacto por el riñón."],"key":"La pancreatina modela la función digestiva exocrina."},{"id":"C07","title":"Coenzima de transaminasas","focus":"PLP y vitamina B₆","v":"Un paciente con deficiencia importante de vitamina B₆ presenta alteraciones metabólicas. Se pregunta qué cofactor necesitan directamente AST y ALT.","q":"¿Cuál es la respuesta correcta?","opts":["Biotina","Piridoxal fosfato (PLP)","Vitamina C","FAD como único cofactor"],"correct":1,"why":["La biotina es cofactor de carboxilasas.","Correcto. El PLP, derivado de vitamina B₆, participa en el intercambio de grupos amino.","La vitamina C no es cofactor de AST/ALT.","FAD interviene en otras reacciones, pero no sustituye al PLP en estas transaminasas."],"key":"AST y ALT son aminotransferasas dependientes de PLP."},{"id":"C08","title":"AST elevada tras ejercicio","focus":"Origen extrahepático","v":"Tras una competición de resistencia, una persona presenta AST moderadamente elevada, ALT poco alterada y creatina cinasa (CK) marcadamente alta.","q":"¿Qué interpretación es más adecuada?","opts":["AST proviene exclusivamente del hígado","La lesión muscular puede contribuir al aumento de AST","La CK elevada confirma obstrucción biliar","Los datos prueban por sí solos hepatitis viral"],"correct":1,"why":["AST también se encuentra en músculo y otros tejidos.","Correcto. La elevación conjunta de AST y CK orienta a componente muscular.","La CK es un marcador de lesión muscular, no una prueba específica de colestasis.","Hacen falta pruebas dirigidas y contexto clínico."],"key":"Una aminotransferasa elevada no identifica por sí sola el órgano de origen."},{"id":"C09","title":"Patrón hepatocelular","focus":"ALT y AST","v":"Un adulto con ictericia presenta ALT 920 U/L y AST 780 U/L; la fosfatasa alcalina está solo discretamente elevada.","q":"¿Qué patrón bioquímico sugieren los valores?","opts":["Predominio de lesión hepatocelular","Ausencia de lesión tisular","Diagnóstico definitivo de cáncer de páncreas","Insuficiencia pancreática exocrina aislada"],"correct":0,"why":["Correcto. Elevaciones muy marcadas de aminotransferasas sugieren lesión hepatocelular y requieren evaluación urgente según el contexto.","Las cifras contradicen esa afirmación.","No existe marcador único suficiente para establecer cáncer pancreático.","La pérdida de enzimas digestivas no explica por sí sola estas transaminasas."],"key":"Las enzimas orientan el patrón de lesión, no establecen la etiología solas."},{"id":"C10","title":"Ictericia y consumo de alcohol","focus":"Integración clínica","v":"Un adulto con consumo crónico elevado de alcohol presenta ictericia, AST 160 U/L y ALT 60 U/L. No se conocen aún bilirrubina, INR, serologías ni imágenes.","q":"¿Cuál es la conclusión más rigurosa?","opts":["El cociente AST/ALT confirma por sí solo cirrosis","El patrón sugiere daño asociado a alcohol, pero requiere evaluación completa","La ALT menor que AST descarta lesión hepática","El caso se resuelve calculando únicamente amilasa"],"correct":1,"why":["Un cociente no confirma estadio ni diagnóstico de cirrosis.","Correcto. El patrón es compatible, no específico; se requieren historia, examen y pruebas adicionales.","Un valor menor de ALT no excluye patología.","La amilasa no resuelve la etiología de ictericia y lesión hepática."],"key":"Interpretar patrones sin convertirlos en diagnósticos automáticos."}],"flashcards":[{"id":"F01","category":"Fundamentos","q":"¿Qué modifican las enzimas y qué no cambian del equilibrio?","a":"Disminuyen la energía de activación y aceleran la llegada al equilibrio. No modifican la ΔG global ni la constante de equilibrio.","source":"bioquimica_general(1).apkg","note":"1663602107977"},{"id":"F02","category":"Fundamentos","q":"¿Qué explica el modelo de ajuste inducido?","a":"El sitio activo puede reorganizar su conformación cuando se une el sustrato, favoreciendo reconocimiento y catálisis.","source":"bioquimica_general(1).apkg","note":"1663603301856"},{"id":"F03","category":"Fundamentos","q":"¿Cuáles son las clases principales de enzimas?","a":"Seis clases tradicionales: oxidorreductasas, transferasas, hidrolasas, liasas, isomerasas y ligasas. La clasificación IUBMB actual añade translocasas (EC 7).","source":"bioquimica_general(1).apkg","note":"1663687276068"},{"id":"F04","category":"Fundamentos","q":"¿Por qué una enzima acelera una reacción?","a":"Estabiliza de manera preferente el estado de transición y reduce la barrera de energía de activación.","source":"bioquimica_general(1).apkg","note":"1663790766857"},{"id":"F05","category":"Fundamentos","q":"¿Qué significa que una enzima alcanza Vmáx?","a":"Que sus centros activos están prácticamente saturados de sustrato; añadir más sustrato ya no aumenta apreciablemente la velocidad en ese sistema.","source":"bioquimica_general(1).apkg","note":"1663866267807"},{"id":"F06","category":"Experimentos","q":"¿Qué reacción cataliza la catalasa?","a":"2 H₂O₂ → 2 H₂O + O₂. Las burbujas visibles corresponden al oxígeno liberado.","source":"bioquimica_general(1).apkg","note":"1668898593177"},{"id":"F07","category":"Experimentos","q":"¿Por qué una catalasa hervida pierde actividad?","a":"El calentamiento intenso puede desnaturalizarla y alterar el sitio activo, por lo que disminuye la descomposición del peróxido.","source":"BIOQUIMICA(1).apkg","note":"1772927461515"},{"id":"F08","category":"Experimentos","q":"¿Qué es el pH óptimo de una enzima?","a":"Es el pH en el que se observa su actividad máxima bajo condiciones de ensayo definidas; depende de cada enzima.","source":"BIOQUIMICA(1).apkg","note":"1772927646641"},{"id":"F09","category":"Experimentos","q":"¿Todas las enzimas tienen actividad máxima a 37 °C y pH 7?","a":"No. Sus óptimos varían según estructura, ambiente fisiológico y condiciones experimentales.","source":"BIOQUIMICA(1).apkg","note":"1772927671435"},{"id":"F10","category":"Experimentos","q":"¿Qué enlaces hidroliza principalmente la α-amilasa salival y pancreática?","a":"Rompe enlaces α(1→4) en el almidón, formando maltosa, maltotriosa y dextrinas límite; no produce exclusivamente glucosa libre.","source":"bioquimica_general(1).apkg","note":"1697377259188"},{"id":"F11","category":"Experimentos","q":"¿Qué producto reductor puede formarse al actuar la amilasa sobre el almidón?","a":"Entre los productos se encuentra la maltosa; la hidrólisis también genera maltotriosa y oligosacáridos reductores.","source":"BIOQUIMICA(1).apkg","note":"1773174742939"},{"id":"F12","category":"Transaminasas","q":"¿Qué cofactor comparten AST y ALT?","a":"Piridoxal fosfato (PLP), derivado de la vitamina B₆, fundamental para transferir grupos amino.","source":"BIOQUIMICA_TOTAL(1).apkg","note":"1577578178306"},{"id":"F13","category":"Transaminasas","q":"¿Qué par de moléculas interconvierte ALT/GPT?","a":"Alanina + α-cetoglutarato ⇌ piruvato + glutamato.","source":"BIOQUIMICA_TOTAL(1).apkg","note":"1577588055213"},{"id":"F14","category":"Transaminasas","q":"¿Qué par de moléculas interconvierte AST/GOT?","a":"Aspartato + α-cetoglutarato ⇌ oxaloacetato + glutamato.","source":"BIOQUIMICA_TOTAL(1).apkg","note":"1577588164160"},{"id":"F15","category":"Transaminasas","q":"¿Por qué AST y ALT no establecen por sí solas un diagnóstico hepático?","a":"Son marcadores de lesión celular, no de una causa específica. AST también puede provenir de músculo y otros tejidos; se necesita contexto clínico.","source":"bioquimica_general(1).apkg","note":"1669314813169"}]}</script>
+<script>
+(function(){
+"use strict";
+var data=JSON.parse(document.getElementById("p07Data").textContent);
+var $=function(id){return document.getElementById(id);};
+var esc=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});};
+function announceHeight(){if(window.self===window.top)return;var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);window.parent.postMessage({type:"p07-height",height:h},"*");}
+function jumpTo(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:"smooth",block:"start"});}
+var expIndex=0;
+function renderExp(){
+ var e=data.experiments[expIndex];
+ Array.prototype.forEach.call($("expTabs").querySelectorAll("button"),function(btn,i){btn.classList.toggle("active",i===expIndex);btn.setAttribute("aria-selected",i===expIndex?"true":"false");});
+ var fields=[["Fundamento bioquímico",e.principle],["Procedimiento / condiciones",e.method],["Evidencia observada",e.observed],["Resultado teórico esperado",e.expected],["Interpretación crítica",e.interpretation]];
+ var first=fields.slice(0,2).map(function(f){return '<div class="field"><label>'+esc(f[0])+'</label><p>'+esc(f[1])+'</p></div>';}).join("");
+ var rest=fields.slice(2).map(function(f){return '<div class="field" style="margin-top:12px"><label>'+esc(f[0])+'</label><p>'+esc(f[1])+'</p></div>';}).join("");
+ var photos=e.photos.map(function(p){return '<button class="photo open-photo" type="button" data-src="'+esc(p[0])+'" data-caption="'+esc(p[1])+'"><img loading="lazy" alt="'+esc(p[1])+'" src="'+esc(p[0])+'"><span>↗ '+esc(p[1])+'</span></button>';}).join("");
+ $("expPanel").innerHTML='<div><span class="microtag">'+esc(e.tag)+'</span><h3 style="margin-top:12px">'+esc(e.name)+'</h3><div class="method-grid">'+first+'</div>'+rest+'</div><div><h4 style="margin-bottom:14px">Evidencia fotográfica</h4><div class="exp-photos">'+photos+'</div><p class="notice">Las imágenes documentan materiales y etapas observables de la sesión.</p></div>';
+ announceHeight();
+}
+data.experiments.forEach(function(e,i){var b=document.createElement("button");b.type="button";b.className="exp-tab";b.textContent=String(i+1).padStart(2,"0")+" · "+e.name;b.setAttribute("role","tab");b.addEventListener("click",function(){expIndex=i;renderExp();});$("expTabs").appendChild(b);});
+renderExp();
+var imageMap=new Map();
+data.experiments.forEach(function(e){e.photos.forEach(function(p){if(!imageMap.has(p[0]))imageMap.set(p[0],p[1]);});});
+imageMap.forEach(function(caption,src){var b=document.createElement("button");b.type="button";b.className="photo open-photo";b.dataset.src=src;b.dataset.caption=caption;b.innerHTML='<img loading="lazy" src="'+esc(src)+'" alt="'+esc(caption)+'"><span>↗ '+esc(caption)+'</span>';$("gallery").appendChild(b);});
+document.addEventListener("click",function(evt){var b=evt.target.closest(".open-photo");if(!b)return;$("lightboxImg").src=b.dataset.src;$("lightboxImg").alt=b.dataset.caption;$("lightboxCaption").textContent=b.dataset.caption;$("lightbox").classList.add("open");document.body.style.overflow="hidden";});
+function closePhoto(){$("lightbox").classList.remove("open");$("lightboxImg").removeAttribute("src");document.body.style.overflow="";}
+$("lightboxClose").addEventListener("click",closePhoto);$("lightbox").addEventListener("click",function(e){if(e.target===$("lightbox"))closePhoto();});document.addEventListener("keydown",function(e){if(e.key==="Escape")closePhoto();});
+function parseNum(s){return Number(String(s).trim().replace(/\s/g,"").replace(",","."));}
+function comma(n,dec){return n.toFixed(dec).replace(".",",");}
+$("calcBtn").addEventListener("click",function(){
+ var a=[0,1,2,3].map(function(i){return parseNum($("ca"+i).value);});
+ if(a.some(function(n){return !Number.isFinite(n);})){$("calcOut").textContent="Verifica las cuatro lecturas; usa coma o punto decimal.";return;}
+ var diffs=[Math.abs(a[1]-a[0]),Math.abs(a[2]-a[1]),Math.abs(a[3]-a[2])];
+ var slope=diffs.reduce(function(x,y){return x+y;},0)/3;
+ $("calcOut").textContent="Pendiente media: "+comma(slope,6)+" ΔA/min · Actividad: "+comma(slope*1746,2)+" U/L";
+});
+var questionIndex=0,answers={};
+try{answers=JSON.parse(localStorage.getItem("p07_quiz_answers")||"{}")||{};}catch(e){answers={};}
+function persistQuiz(){try{localStorage.setItem("p07_quiz_answers",JSON.stringify(answers));}catch(e){}}
+function renderQuiz(){
+ var c=data.cases[questionIndex],ans=answers[c.id],answered=Number.isInteger(ans),isCorrect=answered&&ans===c.correct,done=Object.keys(answers).filter(function(k){return data.cases.some(function(z){return z.id===k&&Number.isInteger(answers[k]);});}).length;
+ var correct=data.cases.filter(function(z){return answers[z.id]===z.correct;}).length;
+ $("quizStatus").textContent="Caso "+(questionIndex+1)+" de "+data.cases.length+" · "+done+" resueltos";
+ $("quizScore").textContent=correct+" / "+data.cases.length;$("quizProgress").style.width=(100*done/data.cases.length)+"%";
+ $("quizDots").innerHTML=data.cases.map(function(item,i){return '<button class="quiz-dot '+(questionIndex===i?"selected ":"")+(Number.isInteger(answers[item.id])?"answered":"")+'" type="button" data-case="'+i+'" aria-label="Ir al caso '+(i+1)+'">'+(i+1)+'</button>';}).join("");
+ var opts=c.opts.map(function(opt,i){var cls=answered?(i===c.correct?"correct":i===ans?"wrong":""):"";return '<button class="option '+cls+'" data-choice="'+i+'" type="button" '+(answered?"disabled":"")+'><b>'+String.fromCharCode(65+i)+'</b><span>'+esc(opt)+'</span></button>';}).join("");
+ var explanation=answered?'<div class="explanation show '+(isCorrect?"":"error")+'"><strong>'+(isCorrect?"✓ ¡Correcto!":"✕ Revisemos la explicación")+'</strong>'+c.why.map(function(w,i){return '<p><strong>'+String.fromCharCode(65+i)+'.</strong> '+esc(w)+'</p>';}).join("")+'<p style="margin-top:10px"><strong>Idea clave:</strong> '+esc(c.key)+'</p></div>':"";
+ $("quizCard").innerHTML='<div class="case-meta"><span class="microtag">CASO '+esc(c.id.slice(1))+'</span><span class="microtag">'+esc(c.focus)+'</span></div><h3>'+esc(c.title)+'</h3><div class="case-vignette">'+esc(c.v)+'</div><p><strong>'+esc(c.q)+'</strong></p><div class="options">'+opts+'</div>'+explanation+'<div class="quiz-footer"><button class="btn btn-light small" type="button" id="casePrev" '+(questionIndex===0?"disabled":"")+'>← Anterior</button><button class="btn btn-primary small" type="button" id="caseNext">'+(questionIndex===data.cases.length-1?"Volver al primero ↻":"Siguiente caso →")+'</button></div>';
+ $("quizCard").querySelectorAll("[data-choice]").forEach(function(b){b.addEventListener("click",function(){answers[c.id]=Number(b.dataset.choice);persistQuiz();renderQuiz();announceHeight();});});
+ $("casePrev").addEventListener("click",function(){questionIndex=Math.max(0,questionIndex-1);renderQuiz();});
+ $("caseNext").addEventListener("click",function(){questionIndex=(questionIndex+1)%data.cases.length;renderQuiz();});
+}
+$("quizDots").addEventListener("click",function(e){var b=e.target.closest("[data-case]");if(!b)return;questionIndex=Number(b.dataset.case);renderQuiz();});
+$("quizReset").addEventListener("click",function(){if(!window.confirm("¿Reiniciar las respuestas de los 10 casos?"))return;answers={};persistQuiz();questionIndex=0;renderQuiz();});
+renderQuiz();
+var activeCategory="Todas",filteredCards=[],cardIndex=0,flipped=false,mastered={};
+try{mastered=JSON.parse(localStorage.getItem("p07_flash_mastered")||"{}")||{};}catch(e){mastered={};}
+function persistCards(){try{localStorage.setItem("p07_flash_mastered",JSON.stringify(mastered));}catch(e){}}
+var categories=["Todas"].concat(Array.from(new Set(data.flashcards.map(function(c){return c.category;}))));
+categories.forEach(function(cat){var b=document.createElement("button");b.type="button";b.className="flash-filter";b.textContent=cat;b.addEventListener("click",function(){activeCategory=cat;cardIndex=0;flipped=false;renderFlash();});$("flashFilters").appendChild(b);});
+function renderFlash(){
+ filteredCards=data.flashcards.filter(function(c){return activeCategory==="Todas"||c.category===activeCategory;});if(cardIndex>=filteredCards.length)cardIndex=0;
+ var c=filteredCards[cardIndex];
+ Array.prototype.forEach.call($("flashFilters").children,function(b){b.classList.toggle("active",b.textContent===activeCategory);});
+ $("flashCard").classList.toggle("flipped",flipped);$("faceLabel").textContent=flipped?"RESPUESTA":"PREGUNTA";$("flashText").textContent=flipped?c.a:c.q;
+ $("flashCounter").textContent=(cardIndex+1)+" / "+filteredCards.length;$("flashCategory").textContent=c.category+" · "+c.id+ (mastered[c.id]?" · ✓ Dominada":"");
+ var count=data.flashcards.filter(function(x){return mastered[x.id];}).length;
+ $("flashMasterText").textContent=count+" de "+data.flashcards.length+" tarjetas dominadas";$("flashProgress").style.width=(100*count/data.flashcards.length)+"%";
+ $("flashSource").textContent="Mazo: "+c.source+" · Nota: "+c.note;
+ $("flashMaster").textContent=mastered[c.id]?"✓ Dominada (desmarcar)":"✓ Dominada";$("flashReview").textContent="↻ Repasar";
+}
+function nextFlash(d){cardIndex=(cardIndex+d+filteredCards.length)%filteredCards.length;flipped=false;renderFlash();}
+function flipFlash(){flipped=!flipped;renderFlash();}
+$("flashCard").addEventListener("click",flipFlash);$("flashFlip").addEventListener("click",flipFlash);$("flashPrev").addEventListener("click",function(){nextFlash(-1);});$("flashNext").addEventListener("click",function(){nextFlash(1);});
+$("flashMaster").addEventListener("click",function(){var c=filteredCards[cardIndex];mastered[c.id]=!mastered[c.id];persistCards();nextFlash(1);});
+$("flashReview").addEventListener("click",function(){var c=filteredCards[cardIndex];delete mastered[c.id];persistCards();nextFlash(1);});
+$("flashReset").addEventListener("click",function(){if(!window.confirm("¿Reiniciar el progreso de las 15 tarjetas?"))return;mastered={};persistCards();renderFlash();});
+renderFlash();
+document.addEventListener("keydown",function(e){var isTyping=["INPUT","TEXTAREA"].includes(document.activeElement.tagName);if(isTyping)return;if(e.key==="ArrowRight"&&document.activeElement===$("flashCard"))nextFlash(1);if(e.key==="ArrowLeft"&&document.activeElement===$("flashCard"))nextFlash(-1);});
+document.querySelectorAll('.localnav a').forEach(function(a){a.addEventListener("click",function(){document.querySelectorAll('.localnav a').forEach(function(x){x.classList.remove('active');});a.classList.add('active');});});
+window.addEventListener("message",function(e){if(e.data&&e.data.type==="p07-scroll"&&typeof e.data.target==="string"){jumpTo(e.data.target);}});
+if(new URLSearchParams(window.location.search).get("embed")==="1"){document.querySelector(".topbar").style.display="none";document.querySelector(".footer").style.display="none";document.querySelectorAll('a[href="index.html#practicas"],a[href="index.html#inicio"]').forEach(function(a){a.style.display="none";});}
+if(typeof ResizeObserver!=="undefined"){new ResizeObserver(function(){announceHeight();}).observe(document.body);}
+window.addEventListener("load",function(){announceHeight();setTimeout(announceHeight,500);setTimeout(announceHeight,1700);});
+window.addEventListener("resize",announceHeight);
+setTimeout(announceHeight,200);
+})();
+</script>
+</body></html>
